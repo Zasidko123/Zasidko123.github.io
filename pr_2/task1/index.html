@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Годинник з додаванням 0</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div id="clock"></div>
+
+    <script>
+        function addZeroIfSingleDigit(value) {
+            return value < 10 ? '0' + value : value;
+        }
+
+        function updateClock() {
+            var now = new Date();
+            var hours = addZeroIfSingleDigit(now.getHours());
+            var minutes = addZeroIfSingleDigit(now.getMinutes());
+            var seconds = addZeroIfSingleDigit(now.getSeconds());
+
+            var formattedTime = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').textContent = formattedTime;
+        }
+
+        // Оновлюємо годинник кожну секунду
+        setInterval(updateClock, 1000);
+
+        // Викликаємо функцію для оновлення часу при завантаженні сторінки
+        updateClock();
+    </script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
