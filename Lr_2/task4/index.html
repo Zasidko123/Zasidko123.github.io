@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форматування дати</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <p id="formattedDate"></p>
+
+    <script>
+        function formatDate(date) {
+            var now = new Date();
+            var timeDiff = now - date;
+
+            if (timeDiff < 1000) {
+                return "прямо зараз";
+            } else if (timeDiff < 60000) {
+                var seconds = Math.floor(timeDiff / 1000);
+                return seconds + " сек. назад";
+            } else if (timeDiff < 3600000) {
+                var minutes = Math.floor(timeDiff / 60000);
+                return minutes + " хв. назад";
+            } else {
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear() % 100;
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+
+                // Додаємо 0, якщо число складається з однієї цифри
+                day = day < 10 ? "0" + day : day;
+                month = month < 10 ? "0" + month : month;
+                year = year < 10 ? "0" + year : year;
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+
+                return day + "." + month + "." + year + " " + hours + ":" + minutes;
+            }
+        }
+
+        // Приклад використання:
+        var date1 = new Date(); // поточна дата
+        var date2 = new Date(date1 - 10000); // 10 секунд тому
+
+        var formattedDate1 = formatDate(date1);
+        var formattedDate2 = formatDate(date2);
+
+        document.getElementById("formattedDate").innerHTML = "Поточний час: " + formattedDate1 + "<br>Час 10 секунд тому: " + formattedDate2;
+    </script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>День тижня</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <script>
+        function getWeekDay(date) {
+            var daysOfWeek = ["НД", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+            var dayIndex = date.getDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        var inputDate = new Date(2012, 0, 3);
+        var weekDay = getWeekDay(inputDate);
+
+        document.write("Робочий день: " + weekDay);
+    </script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

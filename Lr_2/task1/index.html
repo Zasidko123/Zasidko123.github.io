@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вивід дати</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <p id="dateDisplay">Дата: </p>
+
+    <script>
+        function addZeroIfSingleDigit(value) {
+            return value < 10 ? '0' + value : value;
+        }
+
+        function updateClock() {
+            var myDate = new Date('2021-02-20T03:12:00');
+            var hours = addZeroIfSingleDigit(myDate.getHours());
+            var minutes = addZeroIfSingleDigit(myDate.getMinutes());
+            var seconds = addZeroIfSingleDigit(myDate.getSeconds());
+
+            var formattedTime = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('dateDisplay').textContent = "Дата: " + myDate.toLocaleString();
+        }
+
+        // Оновлюємо годинник кожну секунду
+        setInterval(updateClock, 1000);
+
+        // Викликаємо функцію для оновлення часу при завантаженні сторінки
+        updateClock();
+    </script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
