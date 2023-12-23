@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers</title>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<input class="num" type="text" value="" placeholder="число">
+<input class="num" type="text" value="" placeholder="число">
+<input class="num" type="text" value="" placeholder="число">
+<input class="num" type="text" value="" placeholder="число">
+<button id="task">Enter</button>
+<p id="result"></p>
+
+<script>
+    document.getElementById('task').addEventListener('click', function() {
+        // Отримання всіх елементів з класом .num
+        var numInputs = document.getElementsByClassName('num');
+        
+        // Ініціалізація змінної для збереження суми чисел
+        var sum = 0;
+
+        // Проходження по всіх елементах та додавання їх значень до суми
+        for (var i = 0; i < numInputs.length; i++) {
+            // Перетворення значення в число та додавання до суми
+            sum += parseFloat(numInputs[i].value) || 0;
+        }
+
+        // Запис суми в абзац з id="result"
+        document.getElementById('result').textContent = 'Сума: ' + sum;
+    });
+</script>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
