@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Туристичні Послуги - Відкрийте світ разом з нами</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навігація -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span class="neon-text">TravelPro</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i> Головна
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" data-page="services">
+                        <i class="fas fa-concierge-bell"></i> Послуги
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-page="about">
+                        <i class="fas fa-info-circle"></i> Про нас
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-page="contact">
+                        <i class="fas fa-envelope"></i> Контакти
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основний контент -->
+    <main id="main-content">
+        <!-- Головна сторінка -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-text="Відкрийте світ разом з нами">Відкрийте світ разом з нами</h1>
+                    <p class="hero-subtitle">Найкращі туристичні послуги для незабутніх подорожей</p>
+                    <button class="cta-button" onclick="scrollToSection('services')">
+                        <i class="fas fa-plane"></i> Дізнатися більше
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Туристичний пейзаж">
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Екскурсії</h3>
+                    <p>Професійні гіди та цікаві маршрути</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Готелі</h3>
+                    <p>Комфортне проживання за найкращими цінами</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Авіаквитки</h3>
+                    <p>Швидке бронювання та найкращі тарифи</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сторінка послуг -->
+        <section id="services" class="page">
+            <div class="page-header">
+                <h2>Наші Послуги</h2>
+                <p>Повний спектр туристичних послуг для вашої ідеальної подорожі</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Екскурсії">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-map-marked-alt"></i> Екскурсійні тури</h3>
+                        <p>Організовані тури з професійними гідами. Відкрийте найкращі місця світу з нашими експертами.</p>
+                        <ul>
+                            <li>Групові та індивідуальні тури</li>
+                            <li>Професійні гіди</li>
+                            <li>Трансфер та проживання</li>
+                        </ul>
+                        <button class="service-btn">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Готелі">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-hotel"></i> Бронювання готелів</h3>
+                        <p>Широкий вибір готелів від економних до преміум класу. Гарантоване бронювання по всьому світу.</p>
+                        <ul>
+                            <li>Готелі 2-5 зірок</li>
+                            <li>Миттєве підтвердження</li>
+                            <li>Гнучкі умови скасування</li>
+                        </ul>
+                        <button class="service-btn">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Авіаквитки">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-plane"></i> Авіаквитки</h3>
+                        <p>Пошук та бронювання авіаквитків від провідних авіакомпаній. Найкращі ціни та зручні рейси.</p>
+                        <ul>
+                            <li>Всі світові авіакомпанії</li>
+                            <li>Гнучкі дати</li>
+                            <li>Електронні квитки</li>
+                        </ul>
+                        <button class="service-btn">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Аренда автомобілів">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-car"></i> Аренда автомобілів</h3>
+                        <p>Зручна аренда автомобілів у будь-якій точці світу. Від економних до преміум класу.</p>
+                        <ul>
+                            <li>Всі популярні бренди</li>
+                            <li>Страхування включено</li>
+                            <li>Доставка до готелю</li>
+                        </ul>
+                        <button class="service-btn">Детальніше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сторінка про нас -->
+        <section id="about" class="page">
+            <div class="page-header">
+                <h2>Про Нас</h2>
+                <p>Дізнайтеся більше про нашу компанію та наш досвід</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Наша команда">
+                </div>
+                <div class="about-text">
+                    <h3>Наша Історія</h3>
+                    <p>TravelPro - це компанія з багаторічним досвідом у туристичній галузі. Ми допомагаємо людям відкривати світ з 2010 року.</p>
+                    
+                    <h3>Наша Місія</h3>
+                    <p>Зробити подорожі доступними, безпечними та незабутніми для кожного клієнта. Ми прагнемо до найвищої якості обслуговування.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Років досвіду</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50,000+</h4>
+                            <p>Задоволених клієнтів</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100+</h4>
+                            <p>Країн світу</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сторінка контактів -->
+        <section id="contact" class="page">
+            <div class="page-header">
+                <h2>Контакти</h2>
+                <p>Зв'яжіться з нами для отримання консультації або бронювання</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Наші Контакти</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адреса</h4>
+                            <p>вул. Хрещатик, 1<br>Київ, Україна</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Телефон</h4>
+                            <p>+380 44 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@travelpro.ua</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Години роботи</h4>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Надішліть нам повідомлення</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service">
+                                <option value="">Оберіть послугу</option>
+                                <option value="tour">Екскурсійний тур</option>
+                                <option value="hotel">Бронювання готелю</option>
+                                <option value="flight">Авіаквиток</option>
+                                <option value="car">Аренда автомобіля</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Ваше повідомлення" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Надіслати
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TravelPro</h4>
+                <p>Ваш надійний партнер у світі подорожей</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Послуги</h4>
+                <ul>
+                    <li><a href="#services">Екскурсійні тури</a></li>
+                    <li><a href="#services">Бронювання готелів</a></li>
+                    <li><a href="#services">Авіаквитки</a></li>
+                    <li><a href="#services">Аренда автомобілів</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Підтримка</h4>
+                <ul>
+                    <li><a href="#contact">Контакти</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Умови використання</a></li>
+                    <li><a href="#">Політика конфіденційності</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelPro. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
