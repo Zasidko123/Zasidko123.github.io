@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук - АвтоЗапчастини</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-car"></i> АвтоЗапчастини
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-translate="nav.home">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html" data-translate="nav.catalog">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="brands.html" data-translate="nav.brands">Бренди</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="search.html" data-translate="nav.search">Пошук</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-badge" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> <span data-translate="nav.cart">Кошик</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <select class="form-select form-select-sm" id="languageSelector" onchange="changeLanguage(this.value)">
+                            <option value="uk">🇺🇦 Українська</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                        </select>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" data-translate="nav.login">Увійти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html" data-translate="nav.register">Реєстрація</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="py-5 bg-light" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="text-center mb-4" data-translate="search.title">Пошук запчастин</h1>
+                    <p class="lead text-muted" data-translate="search.subtitle">Знайдіть потрібні запчастини швидко та легко</p>
+                    <div class="search-container">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg" id="searchInput" 
+                                   placeholder="Введіть назву запчастини або номер..." data-translate-placeholder="search.placeholder">
+                            <button class="btn btn-primary btn-lg" type="submit" data-translate="search.button">
+                                <i class="fas fa-search"></i> Пошук
+                            </button>
+                        </div>
+                        
+                        <!-- Advanced Search Options -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Марка автомобіля</label>
+                                <select class="form-select" id="carBrand">
+                                    <option value="">Всі марки</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="mercedes">Mercedes-Benz</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="honda">Honda</option>
+                                    <option value="ford">Ford</option>
+                                    <option value="opel">Opel</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Модель</label>
+                                <select class="form-select" id="carModel">
+                                    <option value="">Всі моделі</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Рік випуску</label>
+                                <select class="form-select" id="carYear">
+                                    <option value="">Всі роки</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Категорія</label>
+                                <select class="form-select" id="category">
+                                    <option value="">Всі категорії</option>
+                                    <option value="brakes">Гальма</option>
+                                    <option value="filters">Фільтри</option>
+                                    <option value="suspension">Підвіска</option>
+                                    <option value="electrical">Електрика</option>
+                                    <option value="belts">Ремені</option>
+                                    <option value="cooling">Охолодження</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Search Stats -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h3 class="mb-4" data-translate="search.results">Результати пошуку</h3>
+                    <p class="text-muted">Знайдено товарів: <span id="searchCount">0</span></p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary active" onclick="setViewMode('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" onclick="setViewMode('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results Container -->
+            <div id="searchResults" class="row">
+                <!-- Results will be loaded here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="text-center py-5" style="display: none;">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4>Нічого не знайдено</h4>
+                <p class="text-muted">Спробуйте змінити параметри пошуку</p>
+                <button class="btn btn-primary" onclick="clearSearch()">
+                    <i class="fas fa-times"></i> Очистити пошук
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Searches -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4">Популярні пошуки</h3>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-brake-system fa-2x text-primary mb-2"></i>
+                            <h6>Тормозні колодки</h6>
+                            <button class="btn btn-sm btn-outline-primary" onclick="searchFor('тормозні колодки')">
+                                Пошук
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-filter fa-2x text-success mb-2"></i>
+                            <h6>Масляний фільтр</h6>
+                            <button class="btn btn-sm btn-outline-success" onclick="searchFor('масляний фільтр')">
+                                Пошук
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-cogs fa-2x text-warning mb-2"></i>
+                            <h6>Амортизатор</h6>
+                            <button class="btn btn-sm btn-outline-warning" onclick="searchFor('амортизатор')">
+                                Пошук
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-bolt fa-2x text-info mb-2"></i>
+                            <h6>Свічки запалювання</h6>
+                            <button class="btn btn-sm btn-outline-info" onclick="searchFor('свічки запалювання')">
+                                Пошук
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-car"></i> <span data-translate="footer.brand">АвтоЗапчастини</span></h5>
+                    <p data-translate="footer.description">Якісні запчастини для вашого автомобіля</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="footer.contacts">Контакти</h5>
+                    <p><i class="fas fa-phone"></i> +380 XX XXX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> info@autoparts.ua</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 data-translate="footer.follow">Слідкуйте за нами</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Translations -->
+    <script src="js/translations.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        let currentViewMode = 'grid';
+
+        function performSearch() {
+            const query = document.getElementById('mainSearch').value;
+            const carBrand = document.getElementById('carBrand').value;
+            const carModel = document.getElementById('carModel').value;
+            const carYear = document.getElementById('carYear').value;
+            const category = document.getElementById('category').value;
+
+            // Simulate search
+            const results = window.store.products.filter(product => {
+                const matchesQuery = !query || 
+                    product.name.toLowerCase().includes(query.toLowerCase()) ||
+                    product.brand.toLowerCase().includes(query.toLowerCase());
+                
+                const matchesCategory = !category || product.category === category;
+                
+                return matchesQuery && matchesCategory;
+            });
+
+            displaySearchResults(results);
+        }
+
+        function displaySearchResults(results) {
+            const container = document.getElementById('searchResults');
+            const noResults = document.getElementById('noResults');
+            const searchCount = document.getElementById('searchCount');
+
+            searchCount.textContent = results.length;
+
+            if (results.length === 0) {
+                container.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            container.style.display = 'flex';
+            noResults.style.display = 'none';
+
+            const html = results.map(product => {
+                if (currentViewMode === 'grid') {
+                    return `
+                        <div class="col-md-4 mb-4">
+                            ${window.store.createProductCard(product)}
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="col-12 mb-3">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="${product.image}" class="img-fluid rounded-start" alt="${product.name}">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${product.name}</h5>
+                                            <p class="card-text">${product.description}</p>
+                                            <p class="card-text"><small class="text-muted">Бренд: ${product.brand}</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                        <div class="text-center">
+                                            <div class="product-price mb-2">${product.price} грн</div>
+                                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="${product.id}">
+                                                <i class="fas fa-shopping-cart"></i> Додати
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
+
+            container.innerHTML = html;
+        }
+
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            const buttons = document.querySelectorAll('.btn-group .btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Re-display results with new view mode
+            performSearch();
+        }
+
+        function searchFor(query) {
+            document.getElementById('mainSearch').value = query;
+            performSearch();
+        }
+
+        function clearSearch() {
+            document.getElementById('mainSearch').value = '';
+            document.getElementById('carBrand').value = '';
+            document.getElementById('carModel').value = '';
+            document.getElementById('carYear').value = '';
+            document.getElementById('category').value = '';
+            document.getElementById('searchResults').innerHTML = '';
+            document.getElementById('noResults').style.display = 'none';
+            document.getElementById('searchCount').textContent = '0';
+        }
+
+        // Auto-search on input
+        document.getElementById('mainSearch').addEventListener('input', function() {
+            if (this.value.length >= 2) {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html> 
