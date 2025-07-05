@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Тест ChatApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .test-button {
+            background: #4facfe;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #45a049;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: rgba(76, 175, 80, 0.3); }
+        .error { background: rgba(244, 67, 54, 0.3); }
+        .info { background: rgba(33, 150, 243, 0.3); }
+    </style>
+</head>
+<body>
+    <h1>🧪 Тест ChatApp</h1>
+    
+    <div class="test-section">
+        <h2>📋 Перевірка localStorage</h2>
+        <button class="test-button" onclick="checkLocalStorage()">Перевірити localStorage</button>
+        <button class="test-button" onclick="clearLocalStorage()">Очистити localStorage</button>
+        <div id="localStorageStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>👥 Тест користувачів</h2>
+        <button class="test-button" onclick="createTestUsers()">Створити тестових користувачів</button>
+        <button class="test-button" onclick="showUsers()">Показати користувачів</button>
+        <div id="usersStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>💬 Тест повідомлень</h2>
+        <button class="test-button" onclick="createTestMessages()">Створити тестові повідомлення</button>
+        <button class="test-button" onclick="showMessages()">Показати повідомлення</button>
+        <div id="messagesStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Запуск чату</h2>
+        <button class="test-button" onclick="openChat()">Відкрити чат</button>
+        <button class="test-button" onclick="openLogin()">Відкрити сторінку входу</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 Статус системи</h2>
+        <div id="systemStatus"></div>
+    </div>
+
+    <script>
+        function checkLocalStorage() {
+            const status = document.getElementById('localStorageStatus');
+            try {
+                const users = JSON.parse(localStorage.getItem('chatUsers')) || [];
+                const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+                const currentUser = localStorage.getItem('currentUser');
+                
+                status.innerHTML = `
+                    <div class="status success">
+                        ✅ localStorage працює<br>
+                        Користувачів: ${users.length}<br>
+                        Повідомлень: ${messages.length}<br>
+                        Поточний користувач: ${currentUser ? 'Так' : 'Ні'}
+                    </div>
+                `;
+            } catch (error) {
+                status.innerHTML = `
+                    <div class="status error">
+                        ❌ Помилка localStorage: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('chatUsers');
+            localStorage.removeItem('chatMessages');
+            localStorage.removeItem('currentUser');
+            document.getElementById('localStorageStatus').innerHTML = `
+                <div class="status info">🗑️ localStorage очищено</div>
+            `;
+        }
+
+        function createTestUsers() {
+            const testUsers = [
+                {
+                    id: '1',
+                    username: 'ТестовийКористувач1',
+                    email: 'test1@example.com',
+                    password: '123456',
+                    createdAt: new Date().toISOString(),
+                    lastSeen: new Date().toISOString(),
+                    isOnline: true
+                },
+                {
+                    id: '2',
+                    username: 'ТестовийКористувач2',
+                    email: 'test2@example.com',
+                    password: '123456',
+                    createdAt: new Date().toISOString(),
+                    lastSeen: new Date().toISOString(),
+                    isOnline: true
+                }
+            ];
+            
+            localStorage.setItem('chatUsers', JSON.stringify(testUsers));
+            document.getElementById('usersStatus').innerHTML = `
+                <div class="status success">✅ Створено ${testUsers.length} тестових користувачів</div>
+            `;
+        }
+
+        function showUsers() {
+            const users = JSON.parse(localStorage.getItem('chatUsers')) || [];
+            const status = document.getElementById('usersStatus');
+            
+            if (users.length === 0) {
+                status.innerHTML = '<div class="status info">ℹ️ Користувачів немає</div>';
+                return;
+            }
+            
+            const usersList = users.map(user => 
+                `<li>${user.username} (${user.email}) - ${user.isOnline ? 'онлайн' : 'офлайн'}</li>`
+            ).join('');
+            
+            status.innerHTML = `
+                <div class="status success">
+                    <strong>Користувачі (${users.length}):</strong>
+                    <ul>${usersList}</ul>
+                </div>
+            `;
+        }
+
+        function createTestMessages() {
+            const testMessages = [
+                {
+                    id: '1',
+                    text: 'Привіт! Це тестове повідомлення 😊',
+                    userId: '1',
+                    username: 'ТестовийКористувач1',
+                    timestamp: new Date().toISOString(),
+                    type: 'message'
+                },
+                {
+                    id: '2',
+                    text: 'Привіт! Як справи? 👍',
+                    userId: '2',
+                    username: 'ТестовийКористувач2',
+                    timestamp: new Date().toISOString(),
+                    type: 'message'
+                }
+            ];
+            
+            localStorage.setItem('chatMessages', JSON.stringify(testMessages));
+            document.getElementById('messagesStatus').innerHTML = `
+                <div class="status success">✅ Створено ${testMessages.length} тестових повідомлень</div>
+            `;
+        }
+
+        function showMessages() {
+            const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            const status = document.getElementById('messagesStatus');
+            
+            if (messages.length === 0) {
+                status.innerHTML = '<div class="status info">ℹ️ Повідомлень немає</div>';
+                return;
+            }
+            
+            const messagesList = messages.map(msg => 
+                `<li><strong>${msg.username}:</strong> ${msg.text} (${new Date(msg.timestamp).toLocaleTimeString()})</li>`
+            ).join('');
+            
+            status.innerHTML = `
+                <div class="status success">
+                    <strong>Повідомлення (${messages.length}):</strong>
+                    <ul>${messagesList}</ul>
+                </div>
+            `;
+        }
+
+        function openChat() {
+            // Set current user for testing
+            const users = JSON.parse(localStorage.getItem('chatUsers')) || [];
+            if (users.length > 0) {
+                localStorage.setItem('currentUser', JSON.stringify({
+                    id: users[0].id,
+                    username: users[0].username,
+                    email: users[0].email
+                }));
+            }
+            window.open('chat.html', '_blank');
+        }
+
+        function openLogin() {
+            window.open('index.html', '_blank');
+        }
+
+        // Auto-check system status
+        function updateSystemStatus() {
+            const status = document.getElementById('systemStatus');
+            const users = JSON.parse(localStorage.getItem('chatUsers')) || [];
+            const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            const currentUser = localStorage.getItem('currentUser');
+            
+            status.innerHTML = `
+                <div class="status info">
+                    <strong>Системний статус:</strong><br>
+                    📊 Користувачів: ${users.length}<br>
+                    💬 Повідомлень: ${messages.length}<br>
+                    👤 Активний користувач: ${currentUser ? 'Так' : 'Ні'}<br>
+                    🌐 Браузер: ${navigator.userAgent.split(' ')[0]}<br>
+                    📅 Час: ${new Date().toLocaleString('uk-UA')}
+                </div>
+            `;
+        }
+
+        // Initialize
+        updateSystemStatus();
+        setInterval(updateSystemStatus, 5000);
+    </script>
+</body>
+</html> 

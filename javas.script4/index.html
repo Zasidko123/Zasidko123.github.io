@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 ChatApp - Вхід</title>
+    
+    <!-- Bootstrap CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css for smooth animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- SweetAlert2 for beautiful alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dynamic Background -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <!-- Login Card -->
+                <div class="login-card animate__animated animate__fadeInUp">
+                    <div class="card-header text-center">
+                        <div class="logo-container">
+                            <i class="fas fa-comments logo-icon"></i>
+                        </div>
+                        <h1 class="app-title">ChatApp</h1>
+                        <p class="app-subtitle">Приєднуйтесь до спілкування в реальному часі</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="form-group mb-4">
+                                <label for="username" class="form-label">
+                                    <i class="fas fa-user me-2"></i>Ваш нікнейм
+                                </label>
+                                <input type="text" 
+                                       class="form-control form-control-lg" 
+                                       id="username" 
+                                       placeholder="Введіть ваш нікнейм..."
+                                       required
+                                       minlength="2"
+                                       maxlength="20">
+                                <div class="form-text">
+                                    Мінімум 2 символи, максимум 20
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg" id="loginBtn">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Увійти в чат
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-muted">
+                                Просто введіть нікнейм та почніть спілкування!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="features-section animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-bolt feature-icon"></i>
+                                <h5>Реальний час</h5>
+                                <p>Миттєві повідомлення</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-users feature-icon"></i>
+                                <h5>Активні користувачі</h5>
+                                <p>Бачте хто онлайн</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-item">
+                                <i class="fas fa-smile feature-icon"></i>
+                                <h5>Emoji підтримка</h5>
+                                <p>Виразне спілкування</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-overlay" style="display: none;">
+        <div class="spinner-container">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Завантаження...</span>
+            </div>
+            <p class="mt-3 text-white">Підключення до чату...</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- No Firebase needed - using localStorage -->
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html> 

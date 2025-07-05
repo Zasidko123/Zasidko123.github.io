@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест чату</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { background-color: #d4edda; }
+        .error { background-color: #f8d7da; }
+        .info { background-color: #d1ecf1; }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-success { background-color: #28a745; color: white; }
+        .btn-danger { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Тест чату</h1>
+    
+    <div class="test-section info">
+        <h3>Інструкції:</h3>
+        <ol>
+            <li>Спочатку створіть тестового користувача</li>
+            <li>Перевірте, чи зберігаються дані в localStorage</li>
+            <li>Перейдіть до чату</li>
+            <li>Спробуйте відправити повідомлення</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h3>1. Створення тестового користувача</h3>
+        <button class="btn-primary" onclick="createTestUser()">Створити тестового користувача</button>
+        <button class="btn-success" onclick="checkUserData()">Перевірити дані користувача</button>
+        <div id="userStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>2. Перевірка localStorage</h3>
+        <button class="btn-primary" onclick="checkLocalStorage()">Перевірити localStorage</button>
+        <button class="btn-danger" onclick="clearLocalStorage()">Очистити localStorage</button>
+        <div id="localStorageStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>3. Перехід до чату</h3>
+        <button class="btn-primary" onclick="goToChat()">Перейти до чату</button>
+        <button class="btn-success" onclick="goToLogin()">Перейти до логіну</button>
+    </div>
+
+    <div class="test-section">
+        <h3>4. Тест повідомлень</h3>
+        <button class="btn-primary" onclick="addTestMessage()">Додати тестове повідомлення</button>
+        <button class="btn-success" onclick="checkMessages()">Перевірити повідомлення</button>
+        <div id="messageStatus"></div>
+    </div>
+
+    <script>
+        function createTestUser() {
+            const testUser = {
+                id: 'test-user-' + Date.now(),
+                username: 'ТестовийКористувач',
+                email: 'test@example.com',
+                isOnline: true,
+                lastSeen: new Date().toISOString()
+            };
+
+            // Зберігаємо користувача
+            localStorage.setItem('currentUser', JSON.stringify(testUser));
+            
+            // Додаємо до списку користувачів
+            const users = JSON.parse(localStorage.getItem('chatUsers')) || [];
+            users.push(testUser);
+            localStorage.setItem('chatUsers', JSON.stringify(users));
+
+            document.getElementById('userStatus').innerHTML = 
+                '<div class="success">✅ Тестовий користувач створено: ' + testUser.username + '</div>';
+        }
+
+        function checkUserData() {
+            const currentUser = localStorage.getItem('currentUser');
+            const users = localStorage.getItem('chatUsers');
+            
+            let status = '<div class="info">';
+            status += '<strong>Поточний користувач:</strong><br>';
+            status += currentUser ? JSON.parse(currentUser).username : 'Не знайдено';
+            status += '<br><strong>Всі користувачі:</strong><br>';
+            status += users ? JSON.parse(users).length + ' користувачів' : '0 користувачів';
+            status += '</div>';
+            
+            document.getElementById('userStatus').innerHTML = status;
+        }
+
+        function checkLocalStorage() {
+            const keys = Object.keys(localStorage);
+            let status = '<div class="info"><strong>Ключі в localStorage:</strong><br>';
+            keys.forEach(key => {
+                const value = localStorage.getItem(key);
+                status += `${key}: ${value.length > 50 ? value.substring(0, 50) + '...' : value}<br>`;
+            });
+            status += '</div>';
+            
+            document.getElementById('localStorageStatus').innerHTML = status;
+        }
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            document.getElementById('localStorageStatus').innerHTML = 
+                '<div class="success">✅ localStorage очищено</div>';
+        }
+
+        function goToChat() {
+            window.open('chat.html', '_blank');
+        }
+
+        function goToLogin() {
+            window.open('index.html', '_blank');
+        }
+
+        function addTestMessage() {
+            const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            
+            if (!currentUser) {
+                document.getElementById('messageStatus').innerHTML = 
+                    '<div class="error">❌ Спочатку створіть користувача</div>';
+                return;
+            }
+
+            const testMessage = {
+                id: Date.now().toString(),
+                text: 'Тестове повідомлення від ' + new Date().toLocaleTimeString(),
+                userId: currentUser.id,
+                username: currentUser.username,
+                timestamp: new Date().toISOString(),
+                type: 'message'
+            };
+
+            messages.push(testMessage);
+            localStorage.setItem('chatMessages', JSON.stringify(messages));
+
+            document.getElementById('messageStatus').innerHTML = 
+                '<div class="success">✅ Тестове повідомлення додано</div>';
+        }
+
+        function checkMessages() {
+            const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+            let status = '<div class="info"><strong>Повідомлення:</strong><br>';
+            status += `Всього: ${messages.length}<br>`;
+            messages.slice(-3).forEach(msg => {
+                status += `${msg.username}: ${msg.text}<br>`;
+            });
+            status += '</div>';
+            
+            document.getElementById('messageStatus').innerHTML = status;
+        }
+
+        // Автоматична перевірка при завантаженні
+        window.onload = function() {
+            checkUserData();
+            checkLocalStorage();
+        };
+    </script>
+</body>
+</html> 
