@@ -66,19 +66,19 @@
     .hero {
       background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
       color: white;
-      padding: 4rem 0;
+      padding: 2rem 0;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       opacity: 0.9;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .cta-button {
@@ -98,50 +98,50 @@
 
     /* Sections */
     .section {
-      padding: 3rem 0;
+      padding: 1.5rem 0;
     }
 
     .section h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #2d3748;
     }
 
     /* About */
     .about {
       background: white;
-      margin: 2rem 0;
-      padding: 2rem;
+      margin: 1rem 0;
+      padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .about p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #4a5568;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     /* Skills */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
 
     .skill-category {
       background: white;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .skill-category h3 {
       color: #8b5cf6;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
 
     .skill-list {
@@ -162,8 +162,8 @@
     /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
 
     .project-card {
@@ -175,78 +175,67 @@
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
     }
 
     .project-header {
       background: #8b5cf6;
       color: white;
-      padding: 1rem;
+      padding: 0.5rem;
       text-align: center;
     }
 
     .project-content {
-      padding: 1.5rem;
+      padding: 1rem;
+      text-align: center;
     }
 
     .project-content h3 {
       color: #2d3748;
       margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
 
-    .project-content p {
-      color: #4a5568;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .project-link {
-      padding: 6px 12px;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .project-link.live {
+    .project-button {
+      display: inline-block;
+      padding: 8px 20px;
       background: #8b5cf6;
       color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
     }
 
-    .project-link.github {
-      border: 1px solid #8b5cf6;
-      color: #8b5cf6;
+    .project-button:hover {
+      background: #7c3aed;
     }
 
     /* Contact */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
     }
 
     .contact-item {
       background: white;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .contact-item i {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #8b5cf6;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     .contact-item h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
       color: #2d3748;
     }
 
@@ -266,11 +255,11 @@
       }
 
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .section {
-        padding: 2rem 0;
+        padding: 1rem 0;
       }
 
       .skills-grid,
@@ -364,11 +353,7 @@
           </div>
           <div class="project-content">
             <h3>Tourism Website</h3>
-            <p>Modern tourism website with booking system and interactive features.</p>
-            <div class="project-links">
-              <a href="https://zasidko123.github.io/java.script/" target="_blank" class="project-link live">Live</a>
-              <a href="#" class="project-link github">Code</a>
-            </div>
+            <a href="https://zasidko123.github.io/java.script/" target="_blank" class="project-button">View Project</a>
           </div>
         </div>
 
@@ -378,11 +363,7 @@
           </div>
           <div class="project-content">
             <h3>Expense Tracker</h3>
-            <p>Personal finance app with data visualization and budget tracking.</p>
-            <div class="project-links">
-              <a href="https://zasidko123.github.io/javas.script2/" target="_blank" class="project-link live">Live</a>
-              <a href="#" class="project-link github">Code</a>
-            </div>
+            <a href="https://zasidko123.github.io/javas.script2/" target="_blank" class="project-button">View Project</a>
           </div>
         </div>
 
@@ -392,11 +373,7 @@
           </div>
           <div class="project-content">
             <h3>Weather App</h3>
-            <p>Real-time weather application with location detection.</p>
-            <div class="project-links">
-              <a href="https://zasidko123.github.io/javas.script3/" target="_blank" class="project-link live">Live</a>
-              <a href="#" class="project-link github">Code</a>
-            </div>
+            <a href="https://zasidko123.github.io/javas.script3/" target="_blank" class="project-button">View Project</a>
           </div>
         </div>
 
@@ -406,11 +383,7 @@
           </div>
           <div class="project-content">
             <h3>Chat App</h3>
-            <p>Real-time messaging application with user authentication.</p>
-            <div class="project-links">
-              <a href="https://zasidko123.github.io/javas.script4/" target="_blank" class="project-link live">Live</a>
-              <a href="#" class="project-link github">Code</a>
-            </div>
+            <a href="https://zasidko123.github.io/javas.script4/" target="_blank" class="project-button">View Project</a>
           </div>
         </div>
 
@@ -420,11 +393,7 @@
           </div>
           <div class="project-content">
             <h3>Auto Parts Store</h3>
-            <p>E-commerce platform for automotive parts and accessories.</p>
-            <div class="project-links">
-              <a href="https://zasidko123.github.io/javas.script5/" target="_blank" class="project-link live">Live</a>
-              <a href="#" class="project-link github">Code</a>
-            </div>
+            <a href="https://zasidko123.github.io/javas.script5/" target="_blank" class="project-button">View Project</a>
           </div>
         </div>
       </div>
