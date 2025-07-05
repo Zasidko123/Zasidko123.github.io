@@ -78,6 +78,27 @@
       background: #d0e7fa;
       color: #0d2236;
     }
+    .section {
+      margin-bottom: 50px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .skill-item {
+      background: #f7fbff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border-left: 4px solid #7bbff2;
+    }
+    .certificate {
+      background: #f0f8ff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: 2px solid #b3d8f2;
+    }
     @media (max-width: 900px) {
       .wrapper { flex-direction: column; }
       .sidebar { width: 100%; box-shadow: none; }
@@ -100,15 +121,32 @@
       </ul>
     </nav>
     <main class="content">
-      <section id="about">
+      <section id="about" class="section">
         <h2>About Me</h2>
-        <p>Information about you and contacts will be here.</p>
+        <p>Привіт! Я розробник з досвідом у створенні веб-додатків та програмного забезпечення. Спеціалізуюся на JavaScript, Python, Java та інших мовах програмування.</p>
+        <p>Мої основні напрямки: веб-розробка, мобільні додатки, автоматизація процесів та робота з базами даних.</p>
       </section>
-      <section id="skills">
+
+      <section id="skills" class="section">
         <h2>Skills</h2>
-        <p>Your main skills.</p>
+        <div class="skill-item">
+          <strong>Frontend Development:</strong> HTML5, CSS3, JavaScript, React, Vue.js, Bootstrap
+        </div>
+        <div class="skill-item">
+          <strong>Backend Development:</strong> Node.js, Python, Java, PHP, Express.js
+        </div>
+        <div class="skill-item">
+          <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, SQLite
+        </div>
+        <div class="skill-item">
+          <strong>Tools & Technologies:</strong> Git, Docker, AWS, Firebase, REST API
+        </div>
+        <div class="skill-item">
+          <strong>Other Skills:</strong> UI/UX Design, Responsive Design, SEO Optimization
+        </div>
       </section>
-      <section id="languages">
+
+      <section id="languages" class="section">
         <h2>Programming Languages</h2>
         <div>
           <h3>Python</h3>
@@ -132,7 +170,7 @@
             <a href="https://zasidko123.github.io/java.script/" target="_blank">Tourism Website</a>
             <a href="https://zasidko123.github.io/javas.script2/" target="_blank">Expense Tracker</a>
             <a href="https://zasidko123.github.io/javas.script3/" target="_blank">Weather forecast</a>
-            <a href="https://zasidko123.github.io/javas.script4/" target="_blank">Chat</a>
+           <a href="https://zasidko123.github.io/javas.script4/" target="_blank">Chat</a>
             <a href="https://example.com/js5" target="_blank">Site 5</a>
           </div>
           <h3>C++</h3>
@@ -153,7 +191,83 @@
           </div>
         </div>
       </section>
-      <!-- Add other sections as needed -->
+
+      <section id="ai" class="section">
+        <h2>AI/ML Projects</h2>
+        <div class="project-row">
+          <a href="https://example.com/ai1" target="_blank">ChatBot</a>
+          <a href="https://example.com/ai2" target="_blank">Image Recognition</a>
+          <a href="https://example.com/ai3" target="_blank">Data Analysis</a>
+          <a href="https://example.com/ai4" target="_blank">NLP Project</a>
+          <a href="https://example.com/ai5" target="_blank">Recommendation System</a>
+        </div>
+        <p>Проекти з машинного навчання та штучного інтелекту, включаючи обробку природної мови, комп'ютерний зір та аналіз даних.</p>
+      </section>
+
+      <section id="github" class="section">
+        <h2>GitHub Projects (live)</h2>
+        <div class="project-row">
+          <a href="https://github.com/example1" target="_blank">E-commerce Platform</a>
+          <a href="https://github.com/example2" target="_blank">Task Manager</a>
+          <a href="https://github.com/example3" target="_blank">Social Network</a>
+          <a href="https://github.com/example4" target="_blank">Blog System</a>
+          <a href="https://github.com/example5" target="_blank">API Gateway</a>
+        </div>
+        <p>Активні проекти на GitHub з відкритим кодом. Всі проекти доступні для перегляду та співпраці.</p>
+      </section>
+
+      <section id="reviews" class="section">
+        <h2>Reviews / Certificates</h2>
+        <div class="certificate">
+          <h4>JavaScript Developer Certificate</h4>
+          <p>Отримано від Udemy - курс "Complete JavaScript Course 2024"</p>
+          <p><strong>Дата:</strong> Січень 2024</p>
+        </div>
+        <div class="certificate">
+          <h4>Python Programming Certificate</h4>
+          <p>Отримано від Coursera - курс "Python for Everybody"</p>
+          <p><strong>Дата:</strong> Березень 2024</p>
+        </div>
+        <div class="certificate">
+          <h4>Web Development Bootcamp</h4>
+          <p>Отримано від freeCodeCamp - Full Stack Web Development</p>
+          <p><strong>Дата:</strong> Травень 2024</p>
+        </div>
+        <div class="certificate">
+          <h4>React Developer Certificate</h4>
+          <p>Отримано від Meta - курс "React Basics"</p>
+          <p><strong>Дата:</strong> Липень 2024</p>
+        </div>
+      </section>
+
+      <section id="contacts" class="section">
+        <h2>Contacts</h2>
+        <div class="skill-item">
+          <strong>Email:</strong> your.email@example.com
+        </div>
+        <div class="skill-item">
+          <strong>Phone:</strong> +380 XX XXX XX XX
+        </div>
+        <div class="skill-item">
+          <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+        </div>
+        <div class="skill-item">
+          <strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+        </div>
+        <div class="skill-item">
+          <strong>Telegram:</strong> @your_username
+        </div>
+        <div class="skill-item">
+          <strong>Location:</strong> Україна, Київ
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Додаткова інформація</h2>
+        <p>Я постійно вивчаю нові технології та покращую свої навички. Готовий до нових проектів та співпраці.</p>
+        <p>Досвід роботи: 3+ роки у веб-розробці</p>
+        <p>Мови: Українська (рідна), Англійська (B2), Польська (A2)</p>
+      </section>
     </main>
   </div>
 </body>
