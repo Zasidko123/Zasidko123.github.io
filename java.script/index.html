@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tourism Services - Discover the World with Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span class="neon-text">TravelPro</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" data-page="services">
+                        <i class="fas fa-concierge-bell"></i> Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-page="about">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-page="contact">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-text="Discover the World with Us">Discover the World with Us</h1>
+                    <p class="hero-subtitle">Best tourism services for unforgettable journeys</p>
+                    <button class="cta-button" onclick="scrollToSection('services')">
+                        <i class="fas fa-plane"></i> Learn More
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Tourism landscape">
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Excursions</h3>
+                    <p>Professional guides and interesting routes</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hotels</h3>
+                    <p>Comfortable accommodation at the best prices</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Air Tickets</h3>
+                    <p>Quick booking and best rates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <div class="page-header">
+                <h2>Our Services</h2>
+                <p>Complete range of tourism services for your perfect journey</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Excursions">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-map-marked-alt"></i> Guided Tours</h3>
+                        <p>Organized tours with professional guides. Discover the best places in the world with our experts.</p>
+                        <ul>
+                            <li>Group and individual tours</li>
+                            <li>Professional guides</li>
+                            <li>Transfer and accommodation</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hotels">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-hotel"></i> Hotel Booking</h3>
+                        <p>Wide selection of hotels from budget to premium class. Guaranteed booking worldwide.</p>
+                        <ul>
+                            <li>2-5 star hotels</li>
+                            <li>Instant confirmation</li>
+                            <li>Flexible cancellation terms</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Air Tickets">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-plane"></i> Air Tickets</h3>
+                        <p>Search and booking of air tickets from leading airlines. Best prices and convenient flights.</p>
+                        <ul>
+                            <li>All world airlines</li>
+                            <li>Flexible dates</li>
+                            <li>Electronic tickets</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Car Rental">
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-car"></i> Car Rental</h3>
+                        <p>Convenient car rental anywhere in the world. From economy to premium class.</p>
+                        <ul>
+                            <li>All popular brands</li>
+                            <li>Insurance included</li>
+                            <li>Hotel delivery</li>
+                        </ul>
+                        <button class="service-btn">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="page-header">
+                <h2>About Us</h2>
+                <p>Learn more about our company and our experience</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Our team">
+                </div>
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>TravelPro is a company with years of experience in the tourism industry. We have been helping people discover the world since 2010.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To make travel accessible, safe, and unforgettable for every client. We strive for the highest quality of service.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Years of experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50,000+</h4>
+                            <p>Satisfied clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100+</h4>
+                            <p>Countries worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <div class="page-header">
+                <h2>Contact</h2>
+                <p>Contact us for consultation or booking</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Our Contacts</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Khreshchatyk St., 1<br>Kyiv, Ukraine</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+380 44 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@travelpro.ua</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon-Fri: 9:00 - 18:00<br>Sat: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service">
+                                <option value="">Choose service</option>
+                                <option value="tour">Guided tour</option>
+                                <option value="hotel">Hotel booking</option>
+                                <option value="flight">Air ticket</option>
+                                <option value="car">Car rental</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TravelPro</h4>
+                <p>Your reliable partner in the world of travel</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Guided tours</a></li>
+                    <li><a href="#services">Hotel booking</a></li>
+                    <li><a href="#services">Air tickets</a></li>
+                    <li><a href="#services">Car rental</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelPro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
