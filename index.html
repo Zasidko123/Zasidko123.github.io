@@ -52,6 +52,31 @@
     h2 {
       margin-top: 0;
     }
+    .project-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 30px 0;
+      max-width: 500px;
+    }
+    .project-buttons a {
+      display: block;
+      width: 100%;
+      font-size: 1.3em;
+      padding: 20px 0;
+      text-align: center;
+      background: #f6fff9;
+      color: #2d4739;
+      border: 1px solid #7bbf8e;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .project-buttons a:hover {
+      background: #d2f5e3;
+      color: #1d2e23;
+    }
   </style>
 </head>
 <body>
@@ -112,8 +137,44 @@
         <h2>Навички</h2>
         <p>Ваші основні навички.</p>
       </section>
-      <!-- Далі додайте секції для кожної мови, AI/ML, GitHub, тощо -->
+      <section id="languages">
+        <h2>Мови програмування</h2>
+      </section>
+      <section id="java">
+        <h2>Java</h2>
+        <section id="java-desc">
+          <h3>Опис</h3>
+          <p>Короткий опис досвіду з Java.</p>
+        </section>
+        <section id="java-projects">
+          <h3>10 проєктів на Java</h3>
+          <div class="project-buttons">
+            <a href="#java-project-1">Сайт 1</a>
+            <a href="#java-project-2">Сайт 2</a>
+            <a href="#java-project-3">Сайт 3</a>
+            <a href="#java-project-4">Сайт 4</a>
+            <a href="#java-project-5">Сайт 5</a>
+            <a href="#java-project-6">Сайт 6</a>
+            <a href="#java-project-7">Сайт 7</a>
+            <a href="#java-project-8">Сайт 8</a>
+            <a href="#java-project-9">Сайт 9</a>
+            <a href="#java-project-10">Сайт 10</a>
+          </div>
+          <!-- Секції для кожного проекту -->
+          <section id="java-project-1"><h4>Сайт 1</h4><p>Опис проекту 1.</p></section>
+          <section id="java-project-2"><h4>Сайт 2</h4><p>Опис проекту 2.</p></section>
+          <section id="java-project-3"><h4>Сайт 3</h4><p>Опис проекту 3.</p></section>
+          <section id="java-project-4"><h4>Сайт 4</h4><p>Опис проекту 4.</p></section>
+          <section id="java-project-5"><h4>Сайт 5</h4><p>Опис проекту 5.</p></section>
+          <section id="java-project-6"><h4>Сайт 6</h4><p>Опис проекту 6.</p></section>
+          <section id="java-project-7"><h4>Сайт 7</h4><p>Опис проекту 7.</p></section>
+          <section id="java-project-8"><h4>Сайт 8</h4><p>Опис проекту 8.</p></section>
+          <section id="java-project-9"><h4>Сайт 9</h4><p>Опис проекту 9.</p></section>
+          <section id="java-project-10"><h4>Сайт 10</h4><p>Опис проекту 10.</p></section>
+        </section>
+      </section>
+      <!-- Додайте аналогічно для інших мов, AI/ML, GitHub, тощо -->
     </main>
   </div>
 </body>
-</html>
+</html> 
