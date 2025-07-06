@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Culinary Delights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-orange-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Culinary Delights</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-orange-200 transition">Home</a>
+                    <a href="menu.html" class="hover:text-orange-200 transition">Menu</a>
+                    <a href="chef.html" class="hover:text-orange-200 transition">Chef</a>
+                    <a href="gallery.html" class="text-orange-200 font-semibold">Gallery</a>
+                    <a href="reservations.html" class="hover:text-orange-200 transition">Reservations</a>
+                    <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-orange-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-4">Photo Gallery</h1>
+            <p class="text-xl">A visual journey through our culinary creations and restaurant ambiance</p>
+        </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ff6b35/ffffff?text=Dish+1" alt="Signature Dish" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Signature Dish</h3>
+                            <p class="text-sm">Our chef's special creation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ff8c42/ffffff?text=Dish+2" alt="Pasta Special" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Pasta Special</h3>
+                            <p class="text-sm">Handmade with love</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ffa726/ffffff?text=Dish+3" alt="Seafood Delight" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Seafood Delight</h3>
+                            <p class="text-sm">Fresh from the ocean</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ff5722/ffffff?text=Dish+4" alt="Dessert Art" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Dessert Art</h3>
+                            <p class="text-sm">Sweet masterpieces</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ff7043/ffffff?text=Dish+5" alt="Wine Selection" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Wine Selection</h3>
+                            <p class="text-sm">Perfect pairings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ff8a65/ffffff?text=Dish+6" alt="Chef's Table" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Chef's Table</h3>
+                            <p class="text-sm">Exclusive dining experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ffab91/ffffff?text=Dish+7" alt="Kitchen View" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Kitchen View</h3>
+                            <p class="text-sm">Behind the scenes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/ffcc02/ffffff?text=Dish+8" alt="Ambiance" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Restaurant Ambiance</h3>
+                            <p class="text-sm">Elegant atmosphere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/400x300/fff176/ffffff?text=Dish+9" alt="Special Event" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <h3 class="text-xl font-semibold">Special Events</h3>
+                            <p class="text-sm">Celebrations and gatherings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Culinary Delights</h3>
+                    <p class="text-gray-300">Experience the finest dining with our award-winning chef and exceptional service.</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-gray-300">123 Gourmet Street<br>Foodie City, FC 12345<br>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

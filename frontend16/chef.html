@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef - Culinary Delights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-orange-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Culinary Delights</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-orange-200 transition">Home</a>
+                    <a href="menu.html" class="hover:text-orange-200 transition">Menu</a>
+                    <a href="chef.html" class="text-orange-200 font-semibold">Chef</a>
+                    <a href="gallery.html" class="hover:text-orange-200 transition">Gallery</a>
+                    <a href="reservations.html" class="hover:text-orange-200 transition">Reservations</a>
+                    <a href="contact.html" class="hover:text-orange-200 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-orange-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-4">Meet Our Chef</h1>
+            <p class="text-xl">Passion, creativity, and culinary excellence</p>
+        </div>
+    </div>
+
+    <!-- Chef Profile -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://via.placeholder.com/600x700/ff6b35/ffffff?text=Chef+Marco" alt="Chef Marco" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-gray-800">Chef Marco Rossi</h2>
+                    <p class="text-lg text-gray-600 mb-6">With over 20 years of culinary experience, Chef Marco brings his passion for authentic Italian cuisine to every dish he creates. His journey began in the heart of Tuscany, where he learned the art of traditional cooking from his grandmother.</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Trained at Le Cordon Bleu, Paris</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Worked in Michelin-starred restaurants across Europe</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Featured in multiple culinary magazines</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Winner of the Golden Chef Award 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-orange-800">Chef's Philosophy</h3>
+                        <p class="text-orange-700 italic">"Cooking is not just about feeding the body, it's about nourishing the soul. Every ingredient tells a story, and every dish should create a memorable experience for our guests."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Chef's Specialties</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Italian Classics</h3>
+                    <p class="text-gray-600">Authentic recipes passed down through generations, featuring fresh pasta, risottos, and traditional sauces.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Innovative Fusion</h3>
+                    <p class="text-gray-600">Creative combinations of traditional Italian flavors with modern culinary techniques and global influences.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Seasonal Menus</h3>
+                    <p class="text-gray-600">Fresh, locally-sourced ingredients that change with the seasons, ensuring the highest quality and sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Culinary Delights</h3>
+                    <p class="text-gray-300">Experience the finest dining with our award-winning chef and exceptional service.</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-gray-300">123 Gourmet Street<br>Foodie City, FC 12345<br>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
