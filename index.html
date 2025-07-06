@@ -37,6 +37,208 @@
             color: #666;
         }
 
+        /* About Section */
+        .about-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .about-content h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .skills, .projects, .contact {
+            margin-bottom: 25px;
+        }
+
+        .skills h3, .projects h3, .contact h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 20px;
+            color: #007bff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .project-link {
+            background: #007bff;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* GitHub Statistics */
+        .github-stats {
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Project Icons */
+        .project-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* GitHub Buttons */
+        .github-links {
+            margin-bottom: 25px;
+        }
+
+        .github-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .github-btn {
+            background: #24292e;
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .github-btn:hover {
+            background: #2f363d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(36,41,46,0.3);
+        }
+
+        .github-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Buttons Section */
+        .buttons-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .buttons-section h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .buttons-section p {
+            color: #666;
+            font-size: 1rem;
+        }
+
         .buttons-container {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
@@ -130,8 +332,115 @@
 </head>
 <body>
     <div class="header">
-        <h1>30 Buttons</h1>
-        <p>Simple and clean button layout</p>
+        <h1>🐙 GitHub Portfolio</h1>
+        <p>Frontend Developer | Open Source Contributor | Web Enthusiast</p>
+    </div>
+
+    <div class="about-section">
+        <div class="about-content">
+            <h2>👨‍💻 About Me</h2>
+            <p>I'm a passionate frontend developer who loves creating beautiful and functional web applications. I enjoy contributing to open source projects and sharing knowledge with the developer community.</p>
+            
+            <div class="github-stats">
+                <h3>📊 GitHub Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Languages</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h3>🛠️ Skills & Technologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Sass</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">Webpack</span>
+                    <span class="skill-tag">npm</span>
+                    <span class="skill-tag">REST API</span>
+                </div>
+            </div>
+
+            <div class="projects">
+                <h3>🚀 Featured Projects</h3>
+                <div class="project-links">
+                    <a href="https://zasidko123.github.io/java.script/" target="_blank" class="project-link">
+                        <span class="project-icon">🌍</span>
+                        Tourism Website
+                    </a>
+                    <a href="https://zasidko123.github.io/javas.script2/" target="_blank" class="project-link">
+                        <span class="project-icon">💰</span>
+                        Expense Tracker
+                    </a>
+                    <a href="https://zasidko123.github.io/javas.script3/" target="_blank" class="project-link">
+                        <span class="project-icon">🌤️</span>
+                        Weather App
+                    </a>
+                    <a href="https://zasidko123.github.io/javas.script4/" target="_blank" class="project-link">
+                        <span class="project-icon">💬</span>
+                        Chat App
+                    </a>
+                    <a href="https://zasidko123.github.io/javas.script5/" target="_blank" class="project-link">
+                        <span class="project-icon">🔧</span>
+                        Auto Parts Store
+                    </a>
+                </div>
+            </div>
+
+            <div class="github-links">
+                <h3>🔗 GitHub Links</h3>
+                <div class="github-buttons">
+                    <a href="https://github.com/zasidko123" target="_blank" class="github-btn">
+                        <span class="github-icon">🐙</span>
+                        View Profile
+                    </a>
+                    <a href="https://github.com/zasidko123?tab=repositories" target="_blank" class="github-btn">
+                        <span class="github-icon">📁</span>
+                        Repositories
+                    </a>
+                    <a href="https://github.com/zasidko123?tab=stars" target="_blank" class="github-btn">
+                        <span class="github-icon">⭐</span>
+                        Starred
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h3>📞 Contact & Connect</h3>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+                    <p>🐙 <a href="https://github.com/zasidko123" target="_blank">GitHub Profile</a></p>
+                    <p>📱 <a href="https://t.me/your_username">Telegram</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons-section">
+        <h2>Interactive Elements</h2>
+        <p>30 colorful buttons showcasing different interactions and styles</p>
     </div>
 
     <div class="buttons-container">
@@ -190,4 +499,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
