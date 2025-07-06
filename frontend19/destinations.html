@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - TravelEscape</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plane"></i>
+                TravelEscape
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm" href="packages.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="page-title">Explore Destinations</h1>
+                    <p class="page-subtitle">Discover amazing places around the world</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons text-center">
+                <button class="btn btn-filter active" data-filter="all">All Destinations</button>
+                <button class="btn btn-filter" data-filter="beach">Beach</button>
+                <button class="btn btn-filter" data-filter="mountain">Mountain</button>
+                <button class="btn btn-filter" data-filter="city">City</button>
+                <button class="btn btn-filter" data-filter="cultural">Cultural</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Grid -->
+    <section class="destinations-grid">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-category="beach">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop" alt="Maldives">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Maldives</h3>
+                            <p>Crystal clear waters and pristine white sand beaches.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $1,200</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-category="mountain">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Swiss Alps">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Swiss Alps</h3>
+                            <p>Majestic peaks and world-class skiing destinations.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Switzerland</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $800</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-category="city">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&h=300&fit=crop" alt="Tokyo">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Tokyo</h3>
+                            <p>Modern metropolis with rich cultural heritage.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Japan</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $900</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-category="cultural">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400&h=300&fit=crop" alt="Marrakech">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Marrakech</h3>
+                            <p>Ancient medina with vibrant souks and palaces.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Morocco</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $600</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-category="beach">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Bali">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Bali</h3>
+                            <p>Tropical paradise with temples and rice terraces.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Indonesia</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $700</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-category="mountain">
+                    <div class="destination-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1464822759844-d150baec0134?w=400&h=300&fit=crop" alt="Patagonia">
+                            <div class="card-overlay">
+                                <a href="packages.html" class="btn btn-light btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Patagonia</h3>
+                            <p>Untamed wilderness and dramatic landscapes.</p>
+                            <div class="card-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Argentina</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">From $1,500</span>
+                                <a href="packages.html" class="btn btn-primary">View Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>Can't Find What You're Looking For?</h2>
+                    <p>Our travel experts can create a custom itinerary just for you</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-phone"></i>
+                            Contact Expert
+                        </a>
+                        <a href="packages.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-list"></i>
+                            View All Packages
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>TravelEscape</h5>
+                    <p>Making your travel dreams come true since 2015.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>info@travelescape.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

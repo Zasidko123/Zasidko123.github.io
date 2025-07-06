@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TravelEscape</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plane"></i>
+                TravelEscape
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm" href="packages.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="page-title">Contact Us</h1>
+                    <p class="page-subtitle">Get in touch with our travel experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form-card">
+                        <form class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="destination">Destination of Interest</label>
+                                        <select id="destination" class="form-control">
+                                            <option value="">Select a destination</option>
+                                            <option value="maldives">Maldives</option>
+                                            <option value="switzerland">Switzerland</option>
+                                            <option value="japan">Japan</option>
+                                            <option value="morocco">Morocco</option>
+                                            <option value="bali">Bali</option>
+                                            <option value="patagonia">Patagonia</option>
+                                            <option value="custom">Custom Destination</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="travelers">Number of Travelers</label>
+                                        <select id="travelers" class="form-control">
+                                            <option value="">Select number</option>
+                                            <option value="1">1 Person</option>
+                                            <option value="2">2 People</option>
+                                            <option value="3-5">3-5 People</option>
+                                            <option value="6-10">6-10 People</option>
+                                            <option value="10+">10+ People</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="budget">Budget Range</label>
+                                        <select id="budget" class="form-control">
+                                            <option value="">Select budget</option>
+                                            <option value="under-1000">Under $1,000</option>
+                                            <option value="1000-2000">$1,000 - $2,000</option>
+                                            <option value="2000-5000">$2,000 - $5,000</option>
+                                            <option value="5000-10000">$5,000 - $10,000</option>
+                                            <option value="over-10000">Over $10,000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your travel plans, preferences, and any special requirements..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Our Office</h4>
+                        <p>123 Travel Street<br>Adventure District<br>New York, NY 10001</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>info@travelescape.com<br>support@travelescape.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our travel services</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How far in advance should I book my trip?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend booking at least 3-6 months in advance for international trips, especially during peak seasons. For popular destinations, booking 6-12 months ahead ensures the best availability and rates.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What's included in your travel packages?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our packages typically include flights, accommodations, transfers, guided tours, and some meals. Each package is different, so we'll provide a detailed itinerary with all inclusions before booking.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do you offer travel insurance?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we strongly recommend travel insurance for all international trips. We can arrange comprehensive coverage that includes medical, trip cancellation, and baggage protection.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can you customize a package for my group?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We specialize in creating custom itineraries for groups of any size. Whether it's a family vacation, corporate retreat, or destination wedding, we'll design the perfect experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Let's create the perfect travel experience for you</p>
+                <div class="cta-buttons">
+                    <a href="packages.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar"></i>
+                        View Packages
+                    </a>
+                    <a href="destinations.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-map"></i>
+                        Explore Destinations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>TravelEscape</h5>
+                    <p>Making your travel dreams come true since 2015.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>info@travelescape.com<br>+1 (555) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
