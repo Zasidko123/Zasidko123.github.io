@@ -152,6 +152,688 @@
             gap: 30px;
         }
 
+        /* Combined Section */
+        .combined-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .combined-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .about-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .about-card h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .skills-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .skills-column h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .soft-skills-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .info-card h3 {
+            color: #007bff;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .skills-category {
+            margin-bottom: 15px;
+        }
+
+        .skills-category h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-category li {
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skills-category li::before {
+            content: "▸";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Soft Skills */
+        .soft-skills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Education & Experience */
+        .education-item, .experience-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .education-item:last-child, .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-item h4, .experience-item h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .period {
+            color: #007bff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Buttons Section */
+        .buttons-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .buttons-section h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .buttons-section p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Different colors for each button */
+        .btn:nth-child(1) { background: #007bff; }
+        .btn:nth-child(2) { background: #28a745; }
+        .btn:nth-child(3) { background: #dc3545; }
+        .btn:nth-child(4) { background: #ffc107; color: #212529; }
+        .btn:nth-child(5) { background: #6f42c1; }
+        .btn:nth-child(6) { background: #fd7e14; }
+        .btn:nth-child(7) { background: #20c997; }
+        .btn:nth-child(8) { background: #6c757d; }
+        .btn:nth-child(9) { background: #e83e8c; }
+        .btn:nth-child(10) { background: #17a2b8; }
+        .btn:nth-child(11) { background: #6610f2; }
+        .btn:nth-child(12) { background: #198754; }
+        .btn:nth-child(13) { background: #fd7e14; }
+        .btn:nth-child(14) { background: #0dcaf0; color: #212529; }
+        .btn:nth-child(15) { background: #6f42c1; }
+        .btn:nth-child(16) { background: #d63384; }
+        .btn:nth-child(17) { background: #0d6efd; }
+        .btn:nth-child(18) { background: #198754; }
+        .btn:nth-child(19) { background: #dc3545; }
+        .btn:nth-child(20) { background: #ffc107; color: #212529; }
+        .btn:nth-child(21) { background: #0dcaf0; color: #212529; }
+        .btn:nth-child(22) { background: #6f42c1; }
+        .btn:nth-child(23) { background: #fd7e14; }
+        .btn:nth-child(24) { background: #20c997; }
+        .btn:nth-child(25) { background: #6c757d; }
+        .btn:nth-child(26) { background: #e83e8c; }
+        .btn:nth-child(27) { background: #17a2b8; }
+        .btn:nth-child(28) { background: #6610f2; }
+        .btn:nth-child(29) { background: #198754; }
+        .btn:nth-child(30) { background: #dc3545; }
+
+        @media (max-width: 768px) {
+            .main-content {
+                gap: 20px;
+            }
+            
+            .skills-overview {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .buttons-container {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 10px;
+            }
+            
+            .btn {
+                padding: 12px 15px;
+                font-size: 12px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .combined-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .buttons-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+            
+            .btn {
+                padding: 10px 12px;
+                font-size: 11px;
+            }
+            
+            .resume-section {
+                padding: 15px;
+            }
+            
+            .resume-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Frontend Developer Portfolio</h1>
+        <p>Creating beautiful and functional web experiences</p>
+    </div>
+
+        <div class="main-content">
+        <div class="combined-section">
+            <h2>👨‍💻 About Me & Skills</h2>
+            
+            <div class="about-card">
+                <h3>🎯 Professional Summary</h3>
+                <p>Dedicated frontend developer with 2+ years of experience creating responsive web applications. Passionate about clean code, user experience, and continuous learning. Ready to contribute to innovative projects and grow with a dynamic team.</p>
+            </div>
+
+            <div class="skills-overview">
+                <div class="skills-column">
+                    <h3>💻 Technical Skills</h3>
+                    <div class="skill-category">
+                        <h4>Languages & Frameworks</h4>
+                        <ul>
+                            <li>JavaScript (ES6+) - Advanced</li>
+                            <li>TypeScript - Intermediate</li>
+                            <li>HTML5 & CSS3 - Expert</li>
+                            <li>React.js - Advanced</li>
+                            <li>Vue.js - Intermediate</li>
+                            <li>Tailwind CSS - Advanced</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Git & GitHub - Advanced</li>
+                            <li>Webpack - Intermediate</li>
+                            <li>npm/yarn - Advanced</li>
+                            <li>REST APIs - Intermediate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <h3>🤝 Soft Skills</h3>
+                    <div class="soft-skills-compact">
+                        <div class="skill-item">
+                            <span class="skill-name">Team Collaboration</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Problem Solving</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Communication</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Time Management</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎓 Education</h3>
+                    <div class="education-item">
+                        <h4>College of Electronic Devices</h4>
+                        <p>Software Engineering Faculty / 2020-2024</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Frontend Development Bootcamp</h4>
+                        <p>Udemy / 2023</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>💼 Experience</h3>
+                    <div class="experience-item">
+                        <h4>Freelance Frontend Developer</h4>
+                        <p class="period">2022 - Present</p>
+                        <ul>
+                            <li>Developed responsive websites</li>
+                            <li>Created modern UI with React/Vue.js</li>
+                            <li>Optimized performance & SEO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>📞 Contact</h3>
+                    <div class="contact-info">
+                        <p>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                        <p>💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+                        <p>📱 <a href="https://t.me/your_username">Telegram</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons-section">
+            <h2>🚀 My Projects</h2>
+            <p>30 interactive projects showcasing my frontend development skills</p>
+            
+            <div class="buttons-container">
+                <button class="btn">Button 1</button>
+                <button class="btn">Button 2</button>
+                <button class="btn">Button 3</button>
+                <button class="btn">Button 4</button>
+                <button class="btn">Button 5</button>
+                <button class="btn">Button 6</button>
+                <button class="btn">Button 7</button>
+                <button class="btn">Button 8</button>
+                <button class="btn">Button 9</button>
+                <button class="btn">Button 10</button>
+                <button class="btn">Button 11</button>
+                <button class="btn">Button 12</button>
+                <button class="btn">Button 13</button>
+                <button class="btn">Button 14</button>
+                <button class="btn">Button 15</button>
+                <button class="btn">Button 16</button>
+                <button class="btn">Button 17</button>
+                <button class="btn">Button 18</button>
+                <button class="btn">Button 19</button>
+                <button class="btn">Button 20</button>
+                <button class="btn">Button 21</button>
+                <button class="btn">Button 22</button>
+                <button class="btn">Button 23</button>
+                <button class="btn">Button 24</button>
+                <button class="btn">Button 25</button>
+                <button class="btn">Button 26</button>
+                <button class="btn">Button 27</button>
+                <button class="btn">Button 28</button>
+                <button class="btn">Button 29</button>
+                <button class="btn">Button 30</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Project names in English
+        const projectNames = [
+            "Tourism Website",
+            "Expense Tracker",
+            "Weather App",
+            "Chat Application",
+            "Auto Parts Store",
+            "Calculator",
+            "Timer App",
+            "Todo List",
+            "Memory Game",
+            "Image Slider",
+            "Registration Form",
+            "Photo Gallery",
+            "Music Player",
+            "Interactive Map",
+            "Online Calculator",
+            "Password Generator",
+            "Currency Converter",
+            "Habit Tracker",
+            "Event Planner",
+            "Animation App",
+            "Interactive Form",
+            "Content Slider",
+            "Modal Windows",
+            "Navigation Menu",
+            "Content Filter",
+            "Search App",
+            "Interactive Table",
+            "Progress Chart",
+            "Rating System",
+            "Online Editor"
+        ];
+
+        // Add click functionality to all buttons
+        document.querySelectorAll('.btn').forEach((button, index) => {
+            button.addEventListener('click', function() {
+                // Add click effect
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+                
+                // Show project name in English
+                const projectName = projectNames[index] || `Project ${index + 1}`;
+                console.log(`Clicked: ${projectName} (Project ${index + 1})`);
+                
+                // Change button text to show project name
+                const originalText = this.textContent;
+                this.textContent = projectName;
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .about-content h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .skills, .projects, .contact {
+            margin-bottom: 25px;
+        }
+
+        .skills h3, .projects h3, .contact h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            border-radius: 20px;
+            color: #007bff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .project-link {
+            background: #007bff;
+            border-radius: 8px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+
+
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
         /* Resume Section */
         .resume-section {
             background: white;
