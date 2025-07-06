@@ -222,6 +222,164 @@
             font-size: 1.1rem;
         }
 
+        /* Main Content Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Resume Section */
+        .resume-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 25px;
+            height: fit-content;
+        }
+
+        .resume-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .resume-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .resume-card h3 {
+            color: #007bff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .resume-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .skills-category {
+            margin-bottom: 15px;
+        }
+
+        .skills-category h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-category li {
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skills-category li::before {
+            content: "▸";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Soft Skills */
+        .soft-skills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Education & Experience */
+        .education-item, .experience-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .education-item:last-child, .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-item h4, .experience-item h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .period {
+            color: #007bff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .experience-item li::before {
+            content: "•";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
         /* Buttons Section */
         .buttons-section {
             text-align: center;
@@ -237,6 +395,7 @@
         .buttons-section p {
             color: #666;
             font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .buttons-container {
@@ -302,6 +461,11 @@
         .btn:nth-child(30) { background: #dc3545; }
 
         @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
             .buttons-container {
                 grid-template-columns: repeat(5, 1fr);
                 gap: 10px;
@@ -315,6 +479,10 @@
             .header h1 {
                 font-size: 2rem;
             }
+            
+            .resume-section {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -326,6 +494,14 @@
             .btn {
                 padding: 10px 12px;
                 font-size: 11px;
+            }
+            
+            .resume-section {
+                padding: 15px;
+            }
+            
+            .resume-card {
+                padding: 15px;
             }
         }
     </style>
@@ -438,42 +614,166 @@
         </div>
     </div>
 
-    <div class="buttons-section">
-        <h2>Interactive Elements</h2>
-        <p>30 colorful buttons showcasing different interactions and styles</p>
-    </div>
+    <div class="main-content">
+        <div class="resume-section">
+            <h2>📋 Resume & Skills</h2>
+            
+            <div class="resume-card">
+                <h3>🎯 Professional Summary</h3>
+                <p>Dedicated frontend developer with 2+ years of experience creating responsive web applications. Passionate about clean code, user experience, and continuous learning. Ready to contribute to innovative projects and grow with a dynamic team.</p>
+            </div>
 
-    <div class="buttons-container">
-        <button class="btn">Button 1</button>
-        <button class="btn">Button 2</button>
-        <button class="btn">Button 3</button>
-        <button class="btn">Button 4</button>
-        <button class="btn">Button 5</button>
-        <button class="btn">Button 6</button>
-        <button class="btn">Button 7</button>
-        <button class="btn">Button 8</button>
-        <button class="btn">Button 9</button>
-        <button class="btn">Button 10</button>
-        <button class="btn">Button 11</button>
-        <button class="btn">Button 12</button>
-        <button class="btn">Button 13</button>
-        <button class="btn">Button 14</button>
-        <button class="btn">Button 15</button>
-        <button class="btn">Button 16</button>
-        <button class="btn">Button 17</button>
-        <button class="btn">Button 18</button>
-        <button class="btn">Button 19</button>
-        <button class="btn">Button 20</button>
-        <button class="btn">Button 21</button>
-        <button class="btn">Button 22</button>
-        <button class="btn">Button 23</button>
-        <button class="btn">Button 24</button>
-        <button class="btn">Button 25</button>
-        <button class="btn">Button 26</button>
-        <button class="btn">Button 27</button>
-        <button class="btn">Button 28</button>
-        <button class="btn">Button 29</button>
-        <button class="btn">Button 30</button>
+            <div class="resume-card">
+                <h3>💻 Hard Skills</h3>
+                <div class="skills-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>JavaScript (ES6+) - Advanced</li>
+                        <li>TypeScript - Intermediate</li>
+                        <li>HTML5 & CSS3 - Expert</li>
+                        <li>Python - Basic</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Frameworks & Libraries</h4>
+                    <ul>
+                        <li>React.js - Advanced</li>
+                        <li>Vue.js - Intermediate</li>
+                        <li>Node.js - Basic</li>
+                        <li>Bootstrap - Expert</li>
+                        <li>Tailwind CSS - Advanced</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h4>Tools & Technologies</h4>
+                    <ul>
+                        <li>Git & GitHub - Advanced</li>
+                        <li>Webpack - Intermediate</li>
+                        <li>npm/yarn - Advanced</li>
+                        <li>REST APIs - Intermediate</li>
+                        <li>Figma - Basic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-card">
+                <h3>🤝 Soft Skills</h3>
+                <div class="soft-skills">
+                    <div class="skill-item">
+                        <span class="skill-name">Team Collaboration</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Problem Solving</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Communication</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Time Management</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Adaptability</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Attention to Detail</span>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-card">
+                <h3>🎓 Education & Certifications</h3>
+                <div class="education-item">
+                    <h4>Frontend Development Bootcamp</h4>
+                    <p>Udemy / 2023</p>
+                </div>
+                <div class="education-item">
+                    <h4>JavaScript Algorithms & Data Structures</h4>
+                    <p>freeCodeCamp / 2023</p>
+                </div>
+                <div class="education-item">
+                    <h4>Responsive Web Design</h4>
+                    <p>freeCodeCamp / 2022</p>
+                </div>
+            </div>
+
+            <div class="resume-card">
+                <h3>💼 Work Experience</h3>
+                <div class="experience-item">
+                    <h4>Freelance Frontend Developer</h4>
+                    <p class="period">2022 - Present</p>
+                    <ul>
+                        <li>Developed responsive websites for small businesses</li>
+                        <li>Collaborated with clients to understand requirements</li>
+                        <li>Optimized website performance and SEO</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Junior Web Developer</h4>
+                    <p class="period">2021 - 2022</p>
+                    <ul>
+                        <li>Built user interfaces using HTML, CSS, and JavaScript</li>
+                        <li>Worked with design teams to implement UI/UX</li>
+                        <li>Maintained and updated existing websites</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-section">
+            <h2>🎮 Interactive Elements</h2>
+            <p>30 colorful buttons showcasing different interactions and styles</p>
+            
+            <div class="buttons-container">
+                <button class="btn">Button 1</button>
+                <button class="btn">Button 2</button>
+                <button class="btn">Button 3</button>
+                <button class="btn">Button 4</button>
+                <button class="btn">Button 5</button>
+                <button class="btn">Button 6</button>
+                <button class="btn">Button 7</button>
+                <button class="btn">Button 8</button>
+                <button class="btn">Button 9</button>
+                <button class="btn">Button 10</button>
+                <button class="btn">Button 11</button>
+                <button class="btn">Button 12</button>
+                <button class="btn">Button 13</button>
+                <button class="btn">Button 14</button>
+                <button class="btn">Button 15</button>
+                <button class="btn">Button 16</button>
+                <button class="btn">Button 17</button>
+                <button class="btn">Button 18</button>
+                <button class="btn">Button 19</button>
+                <button class="btn">Button 20</button>
+                <button class="btn">Button 21</button>
+                <button class="btn">Button 22</button>
+                <button class="btn">Button 23</button>
+                <button class="btn">Button 24</button>
+                <button class="btn">Button 25</button>
+                <button class="btn">Button 26</button>
+                <button class="btn">Button 27</button>
+                <button class="btn">Button 28</button>
+                <button class="btn">Button 29</button>
+                <button class="btn">Button 30</button>
+            </div>
+        </div>
     </div>
 
     <script>
