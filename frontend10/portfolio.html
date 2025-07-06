@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeStudio - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Circular Navigation -->
+    <nav class="circular-nav">
+        <div class="nav-center">
+            <div class="logo">
+                <span class="logo-icon">🎨</span>
+                <span class="logo-text">CreativeStudio</span>
+            </div>
+        </div>
+        <div class="nav-items">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="portfolio.html" class="nav-item active">
+                <span class="nav-icon">📁</span>
+                <span class="nav-label">Portfolio</span>
+            </a>
+            <a href="services.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">Services</span>
+            </a>
+            <a href="team.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-label">Team</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                <span class="nav-icon">📞</span>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Portfolio Header -->
+        <section class="hero-section material-theme">
+            <div class="container">
+                <h1 class="hero-title">Our Portfolio</h1>
+                <p class="hero-subtitle">Showcasing our creative work and successful projects</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Filter -->
+        <section class="portfolio-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                    <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    <button class="filter-btn" data-filter="print">Print</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder web-design">🌐</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Platform</h3>
+                            <p>Modern online store with seamless user experience</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">E-commerce</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder branding">🎯</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Tech Startup Brand</h3>
+                            <p>Complete brand identity and visual system</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Brand Guidelines</span>
+                                <span class="tag">Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="ui">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder ui-ux">📱</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Mobile App Design</h3>
+                            <p>Intuitive mobile application for fitness tracking</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Mobile UI</span>
+                                <span class="tag">Prototyping</span>
+                                <span class="tag">User Research</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="print">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder print">📄</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Magazine Layout</h3>
+                            <p>Editorial design for lifestyle magazine</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Typography</span>
+                                <span class="tag">Layout</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder web-design">💼</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Website</h3>
+                            <p>Professional website for financial services company</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">WordPress</span>
+                                <span class="tag">SEO</span>
+                                <span class="tag">Content Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="ui">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder ui-ux">🎮</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Gaming Interface</h3>
+                            <p>User interface design for mobile gaming app</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Game UI</span>
+                                <span class="tag">Animation</span>
+                                <span class="tag">User Experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder branding">🍕</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Restaurant Branding</h3>
+                            <p>Complete branding package for Italian restaurant</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Menu Design</span>
+                                <span class="tag">Packaging</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="print">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder print">📋</div>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Annual Report</h3>
+                            <p>Corporate annual report with data visualization</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Data Design</span>
+                                <span class="tag">Infographics</span>
+                                <span class="tag">Corporate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials -->
+        <section class="testimonials-section material-theme">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"CreativeStudio transformed our brand completely. Their attention to detail and creative vision exceeded our expectations."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨‍💼</div>
+                            <div class="author-info">
+                                <h4>John Smith</h4>
+                                <span>CEO, TechCorp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The team at CreativeStudio delivered an amazing website that perfectly represents our company values and goals."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩‍💼</div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Marketing Director, InnovateCo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Working with CreativeStudio was a pleasure. They understood our vision and brought it to life beautifully."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨‍🎨</div>
+                            <div class="author-info">
+                                <h4>Mike Chen</h4>
+                                <span>Founder, StartupXYZ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
