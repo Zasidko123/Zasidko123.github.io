@@ -635,27 +635,7 @@
 
     
 
-        // Add click functionality to all buttons
-        document.querySelectorAll('.btn').forEach((button, index) => {
-            button.addEventListener('click', function() {
-                // Add click effect
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-                
-                // Show project name in English
-                const projectName = projectNames[index] || `Project ${index + 1}`;
-                console.log(`Clicked: ${projectName} (Project ${index + 1})`);
-                
-                // Change button text to show project name
-                const originalText = this.textContent;
-                this.textContent = projectName;
-                setTimeout(() => {
-                    this.textContent = originalText;
-                }, 2000);
-            });
-        });
+
     </script>
 </body>
 </html> 
