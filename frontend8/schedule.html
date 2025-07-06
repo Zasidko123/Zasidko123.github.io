@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule - PowerFit Gym Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-900 text-white fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold">PowerFit</div>
+                <button class="mobile-menu-btn md:hidden">☰</button>
+                <ul class="nav-links hidden md:flex space-x-8">
+                    <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+                    <li><a href="classes.html" class="hover:text-blue-400 transition">Classes</a></li>
+                    <li><a href="trainers.html" class="hover:text-blue-400 transition">Trainers</a></li>
+                    <li><a href="membership.html" class="hover:text-blue-400 transition">Membership</a></li>
+                    <li><a href="schedule.html" class="text-blue-400 font-bold">Schedule</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero schedule-hero">
+        <div class="container mx-auto px-4 text-center">
+            <div class="hero-content">
+                <h1 class="text-5xl font-bold mb-6">Class Schedule</h1>
+                <p class="text-xl opacity-90">Plan your workouts with our comprehensive class schedule</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-section py-16">
+        <div class="container mx-auto px-4">
+            <div class="schedule-filters mb-8">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="filter-btn active" data-day="all">All Days</button>
+                    <button class="filter-btn" data-day="monday">Monday</button>
+                    <button class="filter-btn" data-day="tuesday">Tuesday</button>
+                    <button class="filter-btn" data-day="wednesday">Wednesday</button>
+                    <button class="filter-btn" data-day="thursday">Thursday</button>
+                    <button class="filter-btn" data-day="friday">Friday</button>
+                    <button class="filter-btn" data-day="saturday">Saturday</button>
+                    <button class="filter-btn" data-day="sunday">Sunday</button>
+                </div>
+            </div>
+
+            <div class="schedule-grid">
+                <div class="schedule-day" data-day="monday">
+                    <h3 class="day-header">Monday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">6:00 AM</div>
+                            <div class="class-info">
+                                <h4>Strength Training</h4>
+                                <p>Mike Johnson</p>
+                                <span class="class-type">Gym Floor</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 AM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">5:30 PM</div>
+                            <div class="class-info">
+                                <h4>Boxing Fitness</h4>
+                                <p>David Rodriguez</p>
+                                <span class="class-type">Boxing Ring</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:30 PM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 PM</div>
+                            <div class="class-info">
+                                <h4>Zumba Dance</h4>
+                                <p>Alex Martinez</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="tuesday">
+                    <h3 class="day-header">Tuesday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">5:00 AM</div>
+                            <div class="class-info">
+                                <h4>CrossFit</h4>
+                                <p>Lisa Thompson</p>
+                                <span class="class-type">CrossFit Area</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:30 AM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:00 PM</div>
+                            <div class="class-info">
+                                <h4>Zumba Dance</h4>
+                                <p>Alex Martinez</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:30 PM</div>
+                            <div class="class-info">
+                                <h4>Boxing Fitness</h4>
+                                <p>David Rodriguez</p>
+                                <span class="class-type">Boxing Ring</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 PM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="wednesday">
+                    <h3 class="day-header">Wednesday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">6:00 AM</div>
+                            <div class="class-info">
+                                <h4>Strength Training</h4>
+                                <p>Mike Johnson</p>
+                                <span class="class-type">Gym Floor</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 AM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">5:30 PM</div>
+                            <div class="class-info">
+                                <h4>Boxing Fitness</h4>
+                                <p>David Rodriguez</p>
+                                <span class="class-type">Boxing Ring</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:30 PM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 PM</div>
+                            <div class="class-info">
+                                <h4>Zumba Dance</h4>
+                                <p>Alex Martinez</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="thursday">
+                    <h3 class="day-header">Thursday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">5:00 AM</div>
+                            <div class="class-info">
+                                <h4>CrossFit</h4>
+                                <p>Lisa Thompson</p>
+                                <span class="class-type">CrossFit Area</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:30 AM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:00 PM</div>
+                            <div class="class-info">
+                                <h4>Zumba Dance</h4>
+                                <p>Alex Martinez</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:30 PM</div>
+                            <div class="class-info">
+                                <h4>Boxing Fitness</h4>
+                                <p>David Rodriguez</p>
+                                <span class="class-type">Boxing Ring</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 PM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="friday">
+                    <h3 class="day-header">Friday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">6:00 AM</div>
+                            <div class="class-info">
+                                <h4>Strength Training</h4>
+                                <p>Mike Johnson</p>
+                                <span class="class-type">Gym Floor</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">7:00 AM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">5:30 PM</div>
+                            <div class="class-info">
+                                <h4>CrossFit</h4>
+                                <p>Lisa Thompson</p>
+                                <span class="class-type">CrossFit Area</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">6:30 PM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="saturday">
+                    <h3 class="day-header">Saturday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">8:00 AM</div>
+                            <div class="class-info">
+                                <h4>CrossFit</h4>
+                                <p>Lisa Thompson</p>
+                                <span class="class-type">CrossFit Area</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">9:00 AM</div>
+                            <div class="class-info">
+                                <h4>Strength Training</h4>
+                                <p>Mike Johnson</p>
+                                <span class="class-type">Gym Floor</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">10:00 AM</div>
+                            <div class="class-info">
+                                <h4>Cardio Blast</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">11:00 AM</div>
+                            <div class="class-info">
+                                <h4>Boxing Fitness</h4>
+                                <p>David Rodriguez</p>
+                                <span class="class-type">Boxing Ring</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">12:00 PM</div>
+                            <div class="class-info">
+                                <h4>Zumba Dance</h4>
+                                <p>Alex Martinez</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day" data-day="sunday">
+                    <h3 class="day-header">Sunday</h3>
+                    <div class="class-schedule">
+                        <div class="schedule-item">
+                            <div class="time-slot">9:00 AM</div>
+                            <div class="class-info">
+                                <h4>Yoga Flow</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">10:30 AM</div>
+                            <div class="class-info">
+                                <h4>Light Cardio</h4>
+                                <p>Sarah Williams</p>
+                                <span class="class-type">Studio A</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-slot">12:00 PM</div>
+                            <div class="class-info">
+                                <h4>Stretching & Recovery</h4>
+                                <p>Emma Chen</p>
+                                <span class="class-type">Studio B</span>
+                            </div>
+                            <button class="book-btn">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-info py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="info-card">
+                    <h3>How to Book Classes</h3>
+                    <ol class="booking-steps">
+                        <li>Log into your PowerFit account</li>
+                        <li>Navigate to the schedule section</li>
+                        <li>Select your desired class and time</li>
+                        <li>Click "Book" to reserve your spot</li>
+                        <li>Receive confirmation via email</li>
+                    </ol>
+                </div>
+                <div class="info-card">
+                    <h3>Class Policies</h3>
+                    <ul class="policy-list">
+                        <li>Arrive 10 minutes before class starts</li>
+                        <li>Bring your own water bottle and towel</li>
+                        <li>Wear appropriate workout attire</li>
+                        <li>Cancel at least 2 hours before class</li>
+                        <li>No-shows may result in booking restrictions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

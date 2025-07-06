@@ -1,0 +1,1927 @@
+/* Custom styles for Bootstrap restaurant website */
+
+.navbar {
+    background: rgba(44, 24, 16, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d4af37 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fefefe !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d4af37 !important;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(44, 24, 16, 0.7), rgba(44, 24, 16, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23d4af37" width="100" height="100"/></svg>');
+    background-size: cover;
+    margin-top: 76px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #d4af37 !important;
+    border-color: #d4af37 !important;
+    color: #2c1810 !important;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: transparent !important;
+    color: #d4af37 !important;
+    transform: translateY(-3px);
+}
+
+.btn-outline-light {
+    border-color: #fefefe !important;
+    color: #fefefe !important;
+    border-radius: 0;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+    background: #fefefe !important;
+    color: #2c1810 !important;
+    transform: translateY(-3px);
+}
+
+/* Gallery Section */
+.gallery-item {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #e9ecef;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.gallery-image {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-item h4 {
+    color: #2c1810;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.gallery-item p {
+    color: #666;
+    font-style: italic;
+}
+
+/* Chef Section */
+.chef-image {
+    font-size: 8rem;
+    margin-bottom: 1rem;
+}
+
+.chef-quote {
+    font-style: italic;
+    color: #d4af37;
+}
+
+.chef-quote .blockquote {
+    border-left: 4px solid #d4af37;
+    padding-left: 1rem;
+}
+
+.chef-stats .stat h4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Testimonials Section */
+.testimonial-card {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid #d4af37;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.testimonial-author strong {
+    color: #2c1810;
+}
+
+/* Contact Section */
+.contact-info {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h4 {
+    color: #2c1810;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item strong {
+    color: #d4af37;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #666;
+    margin: 0;
+}
+
+.contact-form {
+    background: #fefefe;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #ddd;
+    border-radius: 0;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 66px;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chef-stats .stat h4 {
+        font-size: 2rem;
+    }
+    
+    .chef-image {
+        font-size: 4rem;
+    }
+    
+    .gallery-image {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .gallery-item,
+    .testimonial-card,
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Menu Section */
+.menu-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.menu-filters {
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    margin: 0 10px;
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: white;
+    color: #667eea;
+    border-color: white;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.menu-price {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background: #f8f9fa;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h5 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.gallery-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Chef Section */
+.chef-section {
+    background: #1a1a1a;
+    color: white;
+}
+
+.chef-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.chef-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.chef-info h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.chef-title {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.chef-bio {
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.chef-stats {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #ccc;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.specialty-tags .badge {
+    background: #ffd700 !important;
+    color: #1a1a1a;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.review-stars {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.review-text {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.reviewer-info h6 {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.reviewer-info small {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.review-stats {
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item h4 {
+    color: #ffd700;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stat-item p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #2c3e50;
+    color: white;
+}
+
+.contact-info h4 {
+    color: #ffd700;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-top: 5px;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-form .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffd700;
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    color: white;
+}
+
+.contact-form .btn-primary {
+    background: #ffd700;
+    border: none;
+    color: #2c3e50;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background: #ffed4e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-filters .filter-btn {
+        margin: 5px;
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+    
+    .chef-image img {
+        height: 300px;
+    }
+    
+    .review-card {
+        margin-bottom: 20px;
+    }
+    
+    .stat-item {
+        margin: 5px;
+        padding: 15px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Page Hero Sections */
+.page-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gallery-hero {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.chef-hero {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.reviews-hero {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.contact-hero {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Special Offers */
+.special-offers {
+    background: #f8f9fa;
+}
+
+.special-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.special-image {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.special-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.special-description {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.special-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.special-badge {
+    background: #ffd700;
+    color: #1e293b;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+/* Wine Pairing */
+.wine-pairing {
+    background: #1a1a1a;
+    color: white;
+}
+
+.wine-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+}
+
+.wine-card h3 {
+    color: #ffd700;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.wine-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wine-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.wine-name {
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.wine-pairing {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.wine-price {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Restaurant Ambiance */
+.restaurant-ambiance {
+    background: #f8f9fa;
+}
+
+.ambiance-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.ambiance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.ambiance-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.ambiance-content {
+    padding: 25px;
+}
+
+.ambiance-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.ambiance-content p {
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Instagram Feed */
+.instagram-feed {
+    background: white;
+}
+
+.instagram-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.instagram-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Chef Story */
+.chef-story {
+    background: #f8f9fa;
+}
+
+.story-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-content .lead {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+.story-content p {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Chef Awards */
+.chef-awards {
+    background: white;
+}
+
+.award-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-left: 4px solid #ffd700;
+}
+
+.award-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.award-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.award-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.award-card p {
+    color: #64748b;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.award-year {
+    background: #ffd700;
+    color: #1e293b;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* Chef Philosophy */
+.chef-philosophy {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.philosophy-card h2 {
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+.blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.blockquote-footer {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #f8f9fa;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-stars {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.testimonial-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-author strong {
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+/* Review Platforms */
+.review-platforms {
+    background: white;
+}
+
+.platform-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.platform-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.platform-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.platform-rating {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.platform-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Location Map */
+.location-map {
+    background: #f8f9fa;
+}
+
+.map-container {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.map-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.map-placeholder h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.map-placeholder p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: white;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+    background: #f8f9fa;
+    border: none;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #ffd700;
+    color: #1e293b;
+}
+
+.accordion-body {
+    background: white;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Active Navigation */
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important;
+    font-weight: bold;
+}
+
+/* Responsive Design for New Pages */
+@media (max-width: 768px) {
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .special-card,
+    .wine-card,
+    .ambiance-card,
+    .award-card,
+    .testimonial-card,
+    .platform-card {
+        margin-bottom: 20px;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+    }
+    
+    .map-placeholder h4 {
+        font-size: 1.3rem;
+    }
+    
+    .story-content {
+        padding: 25px;
+    }
+    
+    .philosophy-card {
+        padding: 25px;
+    }
+}
+
+/* Frontend7 - La Cuisine Restaurant Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: #1a1a1a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    z-index: 1000;
+    padding: 2rem 0;
+    border-left: 1px solid #3d2b1f;
+}
+
+.nav-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.nav-links {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin-bottom: 1.5rem;
+}
+
+.nav-links a {
+    display: block;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    border-color: #d4af37;
+    transform: translateX(-10px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #cccccc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #d4af37;
+}
+
+/* Main Content */
+.main-content {
+    margin-right: 280px;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    animation: grain 20s linear infinite;
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -5%); }
+    20% { transform: translate(-10%, 5%); }
+    30% { transform: translate(5%, -10%); }
+    40% { transform: translate(-5%, 15%); }
+    50% { transform: translate(-10%, 5%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 10%); }
+    80% { transform: translate(3%, 15%); }
+    90% { transform: translate(-10%, 10%); }
+}
+
+.hero-text {
+    flex: 1;
+    padding: 0 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #d4af37;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text .lead {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-outline-light:hover {
+    background: #ffffff;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.btn-light:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.image-placeholder {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+}
+
+/* Offers Section */
+.offers-section {
+    padding: 5rem 4rem;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c1810;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 1rem;
+}
+
+.offer-card {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    margin-bottom: 2rem;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #d4af37;
+}
+
+.offer-card.featured {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.offer-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c1810;
+}
+
+.offer-card.featured h3 {
+    color: #ffffff;
+}
+
+.offer-card p {
+    color: #666666;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offer-card.featured p {
+    color: #f0f0f0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #d4af37;
+    display: block;
+}
+
+.offer-card.featured .price {
+    color: #ffffff;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 5rem 4rem;
+    background: #f8f9fa;
+    color: #1a1a1a;
+}
+
+.experience-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2c1810;
+}
+
+.experience-content p {
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+.experience-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.experience-features li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #2c1810;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.experience-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #ffffff;
+    border: 2px solid #d4af37;
+}
+
+.btn-primary:hover {
+    background: #b8941f;
+    border-color: #b8941f;
+}
+
+.experience-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.gallery-item {
+    height: 200px;
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 5rem 4rem;
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.testimonial-card {
+    background: #2c1810;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #3d2b1f;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+
+.stars {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.guest-info strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.guest-info span {
+    color: #999999;
+    font-size: 0.9rem;
+}
+
+/* Page Headers */
+.menu-header,
+.wine-header,
+.events-header,
+.reservations-header,
+.contact-header {
+    padding: 5rem 4rem;
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    text-align: center;
+}
+
+.menu-header h1,
+.wine-header h1,
+.events-header h1,
+.reservations-header h1,
+.contact-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-header .lead,
+.wine-header .lead,
+.events-header .lead,
+.reservations-header .lead,
+.contact-header .lead {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Categories */
+.menu-categories,
+.wine-categories {
+    padding: 5rem 4rem;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.menu-category,
+.wine-category {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.menu-category h2,
+.wine-category h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c1810;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.menu-item,
+.wine-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item:last-child,
+.wine-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item h3,
+.wine-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c1810;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item p,
+.wine-item p {
+    color: #666666;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.menu-item .price,
+.wine-item .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+/* Event Spaces */
+.event-spaces {
+    padding: 5rem 4rem;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.event-space {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.event-space:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: #d4af37;
+}
+
+.event-space h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c1810;
+    margin-bottom: 1rem;
+}
+
+.event-space p {
+    color: #666666;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.event-space ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.event-space li {
+    padding: 0.5rem 0;
+    color: #2c1810;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.event-space li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.event-space .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+/* Reservation Form */
+.reservation-form {
+    padding: 5rem 4rem;
+    background: #f8f9fa;
+    color: #1a1a1a;
+}
+
+.form-container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #2c1810;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Contact Info */
+.contact-info {
+    padding: 5rem 4rem;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c1810;
+    margin-bottom: 1rem;
+}
+
+.contact-item p {
+    color: #666666;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form {
+    padding: 5rem 4rem;
+    background: #f8f9fa;
+    color: #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .side-nav {
+        width: 250px;
+    }
+    
+    .main-content {
+        margin-right: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-nav {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .side-nav.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-right: 0;
+    }
+    
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .hero-text {
+        padding: 0 1rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .offers-section,
+    .experience-section,
+    .testimonials-section,
+    .menu-categories,
+    .wine-categories,
+    .event-spaces,
+    .reservation-form,
+    .contact-info,
+    .contact-form {
+        padding: 3rem 1rem;
+    }
+    
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .experience-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-header h1,
+    .wine-header h1,
+    .events-header h1,
+    .reservations-header h1,
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Container utilities */
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Bootstrap grid utilities */
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+} 

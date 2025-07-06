@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Pro - Premium Fitness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#1e293b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="text-2xl font-bold text-primary">🏋️ FitLife Pro</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-primary font-semibold">Home</a>
+                        <a href="programs.html" class="text-gray-600 hover:text-primary">Programs</a>
+                        <a href="coaches.html" class="text-gray-600 hover:text-primary">Coaches</a>
+                        <a href="facilities.html" class="text-gray-600 hover:text-primary">Facilities</a>
+                        <a href="pricing.html" class="text-gray-600 hover:text-primary">Pricing</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-primary">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Join Now</button>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="pt-16 bg-gradient-to-r from-primary to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Transform Your Life</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Join the most advanced fitness community with cutting-edge equipment and expert guidance</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="pricing.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-gray-100">Start Free Trial</a>
+                    <a href="programs.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary">View Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">1000+</div>
+                    <div class="text-gray-600">Active Members</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-gray-600">Expert Coaches</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">100+</div>
+                    <div class="text-gray-600">Weekly Classes</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+                    <div class="text-gray-600">Access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Programs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl">💪</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Strength Training</h3>
+                        <p class="text-gray-600 mb-4">Build muscle and increase strength with our comprehensive weight training programs.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$89/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-6xl">🏃‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cardio Fitness</h3>
+                        <p class="text-gray-600 mb-4">Improve endurance and burn calories with high-intensity cardio workouts.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$79/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <div class="text-6xl">🧘‍♀️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mind & Body</h3>
+                        <p class="text-gray-600 mb-4">Find balance with yoga, pilates, and meditation classes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$69/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-6xl">🥊</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Combat Sports</h3>
+                        <p class="text-gray-600 mb-4">Learn boxing, kickboxing, and martial arts from professional fighters.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$99/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <div class="text-6xl">🏊‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Aqua Fitness</h3>
+                        <p class="text-gray-600 mb-4">Low-impact workouts in our Olympic-size swimming pool.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$59/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <div class="text-6xl">👶</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kids Fitness</h3>
+                        <p class="text-gray-600 mb-4">Fun and engaging fitness programs designed specifically for children.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$49/month</span>
+                            <a href="programs.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Showcase -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">World-Class Facilities</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">State-of-the-Art Equipment</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                            <span>Latest cardio machines with touch screens</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                            <span>Professional weight training equipment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                            <span>Olympic-size swimming pool</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                            <span>Indoor basketball and tennis courts</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                            <span>Spa and sauna facilities</span>
+                        </div>
+                    </div>
+                    <a href="facilities.html" class="inline-block mt-8 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90">Tour Our Facilities</a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="h-64 bg-gray-300 rounded-lg flex items-center justify-center">Gym Floor</div>
+                    <div class="h-64 bg-gray-300 rounded-lg flex items-center justify-center">Pool</div>
+                    <div class="h-64 bg-gray-300 rounded-lg flex items-center justify-center">Studio</div>
+                    <div class="h-64 bg-gray-300 rounded-lg flex items-center justify-center">Spa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Pro - Facilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#1e293b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="text-2xl font-bold text-primary">🏋️ FitLife Pro</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                        <a href="programs.html" class="text-gray-600 hover:text-primary">Programs</a>
+                        <a href="coaches.html" class="text-gray-600 hover:text-primary">Coaches</a>
+                        <a href="facilities.html" class="text-primary font-semibold">Facilities</a>
+                        <a href="pricing.html" class="text-gray-600 hover:text-primary">Pricing</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-primary">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Join Now</button>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Facilities Header -->
+    <section class="pt-16 bg-gradient-to-r from-accent to-yellow-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Our Facilities</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">State-of-the-art equipment and premium amenities for your fitness journey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                        <div class="text-6xl">🏋️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Weight Training Area</h3>
+                        <p class="text-gray-600 mb-4">Extensive collection of free weights, machines, and functional training equipment.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Olympic lifting platforms</li>
+                            <li>• Power racks and cages</li>
+                            <li>• Cable machines</li>
+                            <li>• Dumbbells up to 150lbs</li>
+                        </ul>
+                        <div class="text-primary font-semibold">24/7 Access</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <div class="text-6xl">🏊‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Olympic Pool</h3>
+                        <p class="text-gray-600 mb-4">25-meter heated pool with dedicated lanes for swimming and aqua fitness classes.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Temperature controlled</li>
+                            <li>• Lap swimming lanes</li>
+                            <li>• Aqua fitness area</li>
+                            <li>• Professional lifeguards</li>
+                        </ul>
+                        <div class="text-primary font-semibold">6:00 AM - 10:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-6xl">🧘‍♀️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mind & Body Studio</h3>
+                        <p class="text-gray-600 mb-4">Peaceful space for yoga, pilates, meditation, and mindfulness classes.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Natural lighting</li>
+                            <li>• Premium yoga mats</li>
+                            <li>• Meditation cushions</li>
+                            <li>• Sound system</li>
+                        </ul>
+                        <div class="text-primary font-semibold">Class Schedule</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-6xl">🥊</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Combat Sports Arena</h3>
+                        <p class="text-gray-600 mb-4">Professional boxing ring and MMA cage with specialized training equipment.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Boxing ring</li>
+                            <li>• MMA cage</li>
+                            <li>• Heavy bags</li>
+                            <li>• Speed bags</li>
+                        </ul>
+                        <div class="text-primary font-semibold">Supervised Access</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl">🚴‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cardio Zone</h3>
+                        <p class="text-gray-600 mb-4">Extensive cardio equipment with entertainment systems and personal TVs.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Treadmills</li>
+                            <li>• Ellipticals</li>
+                            <li>• Stationary bikes</li>
+                            <li>• Rowing machines</li>
+                        </ul>
+                        <div class="text-primary font-semibold">24/7 Access</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <div class="text-6xl">👶</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kids Zone</h3>
+                        <p class="text-gray-600 mb-4">Safe and fun environment for children's fitness activities and programs.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Age-appropriate equipment</li>
+                            <li>• Supervised activities</li>
+                            <li>• Educational games</li>
+                            <li>• Qualified staff</li>
+                        </ul>
+                        <div class="text-primary font-semibold">9:00 AM - 7:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Additional Amenities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🚿</div>
+                    <h3 class="font-semibold mb-2">Locker Rooms</h3>
+                    <p class="text-gray-600 text-sm">Private showers, lockers, and changing areas</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">☕</div>
+                    <h3 class="font-semibold mb-2">Café</h3>
+                    <p class="text-gray-600 text-sm">Healthy snacks and protein shakes</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🅿️</div>
+                    <h3 class="font-semibold mb-2">Free Parking</h3>
+                    <p class="text-gray-600 text-sm">Convenient parking for all members</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="font-semibold mb-2">Free WiFi</h3>
+                    <p class="text-gray-600 text-sm">High-speed internet throughout the facility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

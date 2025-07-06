@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Pro - Programs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#1e293b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="text-2xl font-bold text-primary">🏋️ FitLife Pro</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                        <a href="programs.html" class="text-primary font-semibold">Programs</a>
+                        <a href="coaches.html" class="text-gray-600 hover:text-primary">Coaches</a>
+                        <a href="facilities.html" class="text-gray-600 hover:text-primary">Facilities</a>
+                        <a href="pricing.html" class="text-gray-600 hover:text-primary">Pricing</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-primary">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Join Now</button>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Programs Header -->
+    <section class="pt-16 bg-gradient-to-r from-primary to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Our Programs</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Choose from our comprehensive range of fitness programs designed for all levels</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl">💪</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Strength Training</h3>
+                        <p class="text-gray-600 mb-4">Build muscle and increase strength with our comprehensive weight training programs.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Progressive overload training</li>
+                            <li>• Compound movements focus</li>
+                            <li>• Personalized workout plans</li>
+                            <li>• Nutrition guidance included</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$89/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-6xl">🏃‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cardio Fitness</h3>
+                        <p class="text-gray-600 mb-4">Improve endurance and burn calories with high-intensity cardio workouts.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• HIIT training sessions</li>
+                            <li>• Endurance building</li>
+                            <li>• Heart rate monitoring</li>
+                            <li>• Group classes available</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$79/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <div class="text-6xl">🧘‍♀️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mind & Body</h3>
+                        <p class="text-gray-600 mb-4">Find balance with yoga, pilates, and meditation classes.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Yoga and pilates classes</li>
+                            <li>• Meditation sessions</li>
+                            <li>• Stress relief techniques</li>
+                            <li>• Flexibility training</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$69/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-6xl">🥊</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Combat Sports</h3>
+                        <p class="text-gray-600 mb-4">Learn boxing, kickboxing, and martial arts from professional fighters.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Boxing fundamentals</li>
+                            <li>• Kickboxing training</li>
+                            <li>• Self-defense skills</li>
+                            <li>• Competition preparation</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$99/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <div class="text-6xl">🏊‍♂️</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Aqua Fitness</h3>
+                        <p class="text-gray-600 mb-4">Low-impact workouts in our Olympic-size swimming pool.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Water aerobics</li>
+                            <li>• Swimming lessons</li>
+                            <li>• Aqua therapy</li>
+                            <li>• Pool access included</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$59/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <div class="text-6xl">👶</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kids Fitness</h3>
+                        <p class="text-gray-600 mb-4">Fun and engaging fitness programs designed specifically for children.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1">
+                            <li>• Age-appropriate activities</li>
+                            <li>• Fun fitness games</li>
+                            <li>• Coordination development</li>
+                            <li>• Healthy habits building</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$49/month</span>
+                            <a href="pricing.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90">Join Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

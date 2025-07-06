@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Pro - Coaches</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#1e293b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="text-2xl font-bold text-primary">🏋️ FitLife Pro</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-gray-600 hover:text-primary">Home</a>
+                        <a href="programs.html" class="text-gray-600 hover:text-primary">Programs</a>
+                        <a href="coaches.html" class="text-primary font-semibold">Coaches</a>
+                        <a href="facilities.html" class="text-gray-600 hover:text-primary">Facilities</a>
+                        <a href="pricing.html" class="text-gray-600 hover:text-primary">Pricing</a>
+                        <a href="contact.html" class="text-gray-600 hover:text-primary">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Join Now</button>
+                    <button class="md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Coaches Header -->
+    <section class="pt-16 bg-gradient-to-r from-secondary to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Meet Our Coaches</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Expert trainers dedicated to helping you achieve your fitness goals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-8xl">💪</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Mike Johnson</h3>
+                        <p class="text-primary font-semibold mb-3">Strength & Conditioning Coach</p>
+                        <p class="text-gray-600 mb-4">Former professional athlete with 10+ years of coaching experience. Specializes in powerlifting and functional training.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Strength</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Powerlifting</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-8xl">🏃‍♀️</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Sarah Chen</h3>
+                        <p class="text-primary font-semibold mb-3">Cardio & HIIT Specialist</p>
+                        <p class="text-gray-600 mb-4">Certified personal trainer with expertise in high-intensity interval training and endurance coaching.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Cardio</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">HIIT</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <div class="text-8xl">🧘‍♂️</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Emma Rodriguez</h3>
+                        <p class="text-primary font-semibold mb-3">Yoga & Wellness Coach</p>
+                        <p class="text-gray-600 mb-4">200-hour certified yoga instructor specializing in vinyasa flow, meditation, and mindfulness practices.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Yoga</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Meditation</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-8xl">🥊</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">David Thompson</h3>
+                        <p class="text-primary font-semibold mb-3">Combat Sports Trainer</p>
+                        <p class="text-gray-600 mb-4">Former professional boxer with 15 years of coaching experience in boxing, kickboxing, and MMA.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Boxing</span>
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">MMA</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <div class="text-8xl">🏊‍♀️</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Lisa Park</h3>
+                        <p class="text-primary font-semibold mb-3">Aqua Fitness Instructor</p>
+                        <p class="text-gray-600 mb-4">Certified swimming instructor and aqua fitness specialist with expertise in water-based rehabilitation.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Swimming</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm">Aqua Fitness</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-64 bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center">
+                        <div class="text-8xl">👶</div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Alex Morgan</h3>
+                        <p class="text-primary font-semibold mb-3">Kids Fitness Specialist</p>
+                        <p class="text-gray-600 mb-4">Certified children's fitness instructor with a background in physical education and child development.</p>
+                        <div class="flex justify-center space-x-2 mb-4">
+                            <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Kids Fitness</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Development</span>
+                        </div>
+                        <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90">Book Session</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
