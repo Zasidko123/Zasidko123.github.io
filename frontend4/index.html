@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svelte Task Manager - TaskFlow</title>
+    <script src="https://unpkg.com/svelte@4/dist/svelte.umd.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .app {
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .nav-links a.active {
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .dashboard-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Task Management */
+        .task-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        /* Add Task Form */
+        .add-task-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .add-button {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .add-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Task Lists */
+        .task-lists {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .task-column {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .column-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .task-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .task-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .task-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-priority {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .priority-high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .priority-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .priority-low {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .task-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .task-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            padding: 0.3rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .action-btn.edit {
+            color: #ff6b35;
+        }
+
+        .action-btn.delete {
+            color: #dc3545;
+        }
+
+        .action-btn.complete {
+            color: #28a745;
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .progress-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .progress-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .task-lists {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Svelte Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Task Status Colors */
+        .status-todo {
+            border-left-color: #ffc107;
+        }
+
+        .status-in-progress {
+            border-left-color: #17a2b8;
+        }
+
+        .status-done {
+            border-left-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="#" class="logo" onclick="setActivePage('dashboard')">📋 TaskFlow</a>
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-dashboard" class="active" onclick="setActivePage('dashboard')">Dashboard</a></li>
+                    <li><a href="#" id="nav-tasks" onclick="setActivePage('tasks')">Tasks</a></li>
+                    <li><a href="#" id="nav-projects" onclick="setActivePage('projects')">Projects</a></li>
+                    <li><a href="#" id="nav-analytics" onclick="setActivePage('analytics')">Analytics</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Page -->
+            <div id="dashboard-page" class="page fade-in">
+                <div class="dashboard">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Task Management Dashboard</h1>
+                        <p class="dashboard-subtitle">Organize your work and boost productivity</p>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📝</div>
+                            <div class="stat-value" id="total-tasks">24</div>
+                            <div class="stat-label">Total Tasks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏳</div>
+                            <div class="stat-value" id="in-progress">8</div>
+                            <div class="stat-label">In Progress</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-value" id="completed">12</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-value" id="productivity">85%</div>
+                            <div class="stat-label">Productivity</div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Section -->
+                    <div class="progress-section">
+                        <h2 class="section-title">Project Progress</h2>
+                        <div class="progress-grid">
+                            <div class="progress-card">
+                                <div class="progress-title">Website Redesign</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%; background: #28a745;"></div>
+                                </div>
+                                <div class="progress-text">75% Complete</div>
+                            </div>
+                            <div class="progress-card">
+                                <div class="progress-title">Mobile App</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%; background: #17a2b8;"></div>
+                                </div>
+                                <div class="progress-text">45% Complete</div>
+                            </div>
+                            <div class="progress-card">
+                                <div class="progress-title">Marketing Campaign</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%; background: #ffc107;"></div>
+                                </div>
+                                <div class="progress-text">90% Complete</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks Page -->
+            <div id="tasks-page" class="page" style="display: none;">
+                <div class="task-section">
+                    <h2 class="section-title">Task Management</h2>
+                    
+                    <!-- Add Task Form -->
+                    <div class="add-task-form">
+                        <h3 style="margin-bottom: 1.5rem; color: #333;">Add New Task</h3>
+                        <form id="task-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="task-title">Task Title</label>
+                                    <input type="text" id="task-title" placeholder="Enter task title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="task-priority">Priority</label>
+                                    <select id="task-priority" required>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="task-description">Description</label>
+                                <textarea id="task-description" rows="3" placeholder="Enter task description"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="task-due-date">Due Date</label>
+                                    <input type="date" id="task-due-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="task-assignee">Assignee</label>
+                                    <input type="text" id="task-assignee" placeholder="Enter assignee name">
+                                </div>
+                            </div>
+                            <button type="submit" class="add-button">Add Task</button>
+                        </form>
+                    </div>
+
+                    <!-- Task Lists -->
+                    <div class="task-lists">
+                        <div class="task-column status-todo">
+                            <div class="column-title">📋 To Do</div>
+                            <div id="todo-tasks">
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Design Homepage</div>
+                                            <span class="task-priority priority-high">High</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Create modern homepage design with responsive layout</div>
+                                    <div class="task-meta">
+                                        <span>Due: Jan 20, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn complete">✅</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Update Documentation</div>
+                                            <span class="task-priority priority-medium">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Update API documentation with new endpoints</div>
+                                    <div class="task-meta">
+                                        <span>Due: Jan 22, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn complete">✅</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="task-column status-in-progress">
+                            <div class="column-title">⏳ In Progress</div>
+                            <div id="in-progress-tasks">
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Implement Authentication</div>
+                                            <span class="task-priority priority-high">High</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Set up user authentication system with JWT tokens</div>
+                                    <div class="task-meta">
+                                        <span>Due: Jan 18, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn complete">✅</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Database Optimization</div>
+                                            <span class="task-priority priority-medium">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Optimize database queries and add indexes</div>
+                                    <div class="task-meta">
+                                        <span>Due: Jan 25, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn complete">✅</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="task-column status-done">
+                            <div class="column-title">✅ Done</div>
+                            <div id="done-tasks">
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Setup Development Environment</div>
+                                            <span class="task-priority priority-low">Low</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Configure development tools and dependencies</div>
+                                    <div class="task-meta">
+                                        <span>Completed: Jan 15, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-item">
+                                    <div class="task-header">
+                                        <div>
+                                            <div class="task-title">Code Review</div>
+                                            <span class="task-priority priority-medium">Medium</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-description">Review pull requests and provide feedback</div>
+                                    <div class="task-meta">
+                                        <span>Completed: Jan 14, 2024</span>
+                                        <div class="task-actions">
+                                            <button class="action-btn edit">✏️</button>
+                                            <button class="action-btn delete">🗑️</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Page -->
+            <div id="projects-page" class="page" style="display: none;">
+                <div class="task-section">
+                    <h2 class="section-title">Project Management</h2>
+                    <div class="task-lists">
+                        <div class="task-column">
+                            <div class="column-title">🚀 Active Projects</div>
+                            <div class="task-item">
+                                <div class="task-header">
+                                    <div class="task-title">E-commerce Platform</div>
+                                </div>
+                                <div class="task-description">Full-stack e-commerce solution with payment integration</div>
+                                <div class="task-meta">
+                                    <span>Progress: 65%</span>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-header">
+                                    <div class="task-title">Mobile Banking App</div>
+                                </div>
+                                <div class="task-description">Cross-platform mobile banking application</div>
+                                <div class="task-meta">
+                                    <span>Progress: 40%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="task-column">
+                            <div class="column-title">📊 Project Analytics</div>
+                            <div class="progress-card">
+                                <div class="progress-title">Team Velocity</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%; background: #28a745;"></div>
+                                </div>
+                                <div class="progress-text">80% Efficiency</div>
+                            </div>
+                            <div class="progress-card">
+                                <div class="progress-title">Code Quality</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%; background: #17a2b8;"></div>
+                                </div>
+                                <div class="progress-text">92% Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Page -->
+            <div id="analytics-page" class="page" style="display: none;">
+                <div class="task-section">
+                    <h2 class="section-title">Performance Analytics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-value">94%</div>
+                            <div class="stat-label">Task Completion Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-value">2.3</div>
+                            <div class="stat-label">Avg Days per Task</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-value">87%</div>
+                            <div class="stat-label">On-time Delivery</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Svelte-like functionality
+        let tasks = [
+            { id: 1, title: 'Design Homepage', description: 'Create modern homepage design with responsive layout', priority: 'high', status: 'todo', dueDate: '2024-01-20' },
+            { id: 2, title: 'Update Documentation', description: 'Update API documentation with new endpoints', priority: 'medium', status: 'todo', dueDate: '2024-01-22' },
+            { id: 3, title: 'Implement Authentication', description: 'Set up user authentication system with JWT tokens', priority: 'high', status: 'in-progress', dueDate: '2024-01-18' },
+            { id: 4, title: 'Database Optimization', description: 'Optimize database queries and add indexes', priority: 'medium', status: 'in-progress', dueDate: '2024-01-25' },
+            { id: 5, title: 'Setup Development Environment', description: 'Configure development tools and dependencies', priority: 'low', status: 'done', dueDate: '2024-01-15' },
+            { id: 6, title: 'Code Review', description: 'Review pull requests and provide feedback', priority: 'medium', status: 'done', dueDate: '2024-01-14' }
+        ];
+
+        function setActivePage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(page + '-page').style.display = 'block';
+            
+            // Add active class to selected nav link
+            document.getElementById('nav-' + page).classList.add('active');
+            
+            // Add animation
+            document.getElementById(page + '-page').classList.add('fade-in');
+        }
+
+        function addTask(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('task-title').value;
+            const description = document.getElementById('task-description').value;
+            const priority = document.getElementById('task-priority').value;
+            const dueDate = document.getElementById('task-due-date').value;
+            const assignee = document.getElementById('task-assignee').value;
+
+            const newTask = {
+                id: tasks.length + 1,
+                title,
+                description,
+                priority,
+                status: 'todo',
+                dueDate,
+                assignee
+            };
+
+            tasks.push(newTask);
+            updateTaskDisplay();
+            updateStats();
+            
+            // Reset form
+            event.target.reset();
+            
+            alert('Task added successfully!');
+        }
+
+        function updateTaskDisplay() {
+            // This would update the DOM with new tasks
+            console.log('Tasks updated:', tasks);
+        }
+
+        function updateStats() {
+            const totalTasks = tasks.length;
+            const inProgress = tasks.filter(t => t.status === 'in-progress').length;
+            const completed = tasks.filter(t => t.status === 'done').length;
+            const productivity = Math.round((completed / totalTasks) * 100);
+
+            document.getElementById('total-tasks').textContent = totalTasks;
+            document.getElementById('in-progress').textContent = inProgress;
+            document.getElementById('completed').textContent = completed;
+            document.getElementById('productivity').textContent = productivity + '%';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            setActivePage('dashboard');
+            updateStats();
+            
+            // Add task form
+            const taskForm = document.getElementById('task-form');
+            if (taskForm) {
+                taskForm.addEventListener('submit', addTask);
+            }
+
+            // Task action buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('action-btn')) {
+                    const action = e.target.classList.contains('edit') ? 'edit' :
+                                 e.target.classList.contains('delete') ? 'delete' :
+                                 e.target.classList.contains('complete') ? 'complete' : '';
+                    
+                    if (action) {
+                        const taskItem = e.target.closest('.task-item');
+                        const taskTitle = taskItem.querySelector('.task-title').textContent;
+                        
+                        switch(action) {
+                            case 'edit':
+                                alert(`Editing task: ${taskTitle}`);
+                                break;
+                            case 'delete':
+                                if (confirm(`Delete task: ${taskTitle}?`)) {
+                                    taskItem.remove();
+                                    updateStats();
+                                }
+                                break;
+                            case 'complete':
+                                alert(`Marking task as complete: ${taskTitle}`);
+                                break;
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Finance Dashboard</title>
+    <script src="https://unpkg.com/@angular/core@16/bundles/core.umd.js"></script>
+    <script src="https://unpkg.com/@angular/common@16/bundles/common.umd.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser@16/bundles/platform-browser.umd.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser-dynamic@16/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="https://unpkg.com/@angular/forms@16/bundles/forms.umd.js"></script>
+    <script src="https://unpkg.com/@angular/router@16/bundles/router.umd.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .app {
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-links a.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        /* Dashboard Grid */
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .dashboard-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .dashboard-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Charts Section */
+        .charts-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .chart-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .chart-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Transactions Table */
+        .transactions-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .transactions-table th,
+        .transactions-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .transactions-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .transaction-amount {
+            font-weight: bold;
+        }
+
+        .transaction-amount.positive {
+            color: #28a745;
+        }
+
+        .transaction-amount.negative {
+            color: #dc3545;
+        }
+
+        .transaction-status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Budget Section */
+        .budget-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .budget-category {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .category-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .budget-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .budget-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .budget-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .action-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 1.5rem;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .budget-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .actions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .transactions-table {
+                font-size: 0.9rem;
+            }
+
+            .transactions-table th,
+            .transactions-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Angular Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="#" class="logo" onclick="setActivePage('dashboard')">💰 FinanceHub</a>
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-dashboard" class="active" onclick="setActivePage('dashboard')">Dashboard</a></li>
+                    <li><a href="#" id="nav-transactions" onclick="setActivePage('transactions')">Transactions</a></li>
+                    <li><a href="#" id="nav-budget" onclick="setActivePage('budget')">Budget</a></li>
+                    <li><a href="#" id="nav-reports" onclick="setActivePage('reports')">Reports</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Dashboard Page -->
+            <div id="dashboard-page" class="page fade-in">
+                <div class="dashboard">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">Financial Dashboard</h1>
+                        <p class="dashboard-subtitle">Track your finances and make informed decisions</p>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-value">$24,580</div>
+                            <div class="stat-label">Total Balance</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-value">+12.5%</div>
+                            <div class="stat-label">Monthly Growth</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💳</div>
+                            <div class="stat-value">$3,240</div>
+                            <div class="stat-label">Monthly Spending</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-value">$1,890</div>
+                            <div class="stat-label">Monthly Savings</div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div class="charts-section">
+                        <h2 class="section-title">Financial Analytics</h2>
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h3 class="chart-title">Spending by Category</h3>
+                                <div class="chart-placeholder">
+                                    Interactive Pie Chart
+                                </div>
+                                <p>Food & Dining: 35% | Transportation: 25% | Entertainment: 20% | Shopping: 15% | Other: 5%</p>
+                            </div>
+                            <div class="chart-card">
+                                <h3 class="chart-title">Monthly Trends</h3>
+                                <div class="chart-placeholder">
+                                    Interactive Line Chart
+                                </div>
+                                <p>Income vs Expenses over the last 12 months</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h2 class="section-title">Quick Actions</h2>
+                        <div class="actions-grid">
+                            <button class="action-button" onclick="showModal('transfer')">
+                                <div class="action-icon">💸</div>
+                                <span>Transfer Money</span>
+                            </button>
+                            <button class="action-button" onclick="showModal('payment')">
+                                <div class="action-icon">💳</div>
+                                <span>Make Payment</span>
+                            </button>
+                            <button class="action-button" onclick="showModal('budget')">
+                                <div class="action-icon">📊</div>
+                                <span>Set Budget</span>
+                            </button>
+                            <button class="action-button" onclick="showModal('investment')">
+                                <div class="action-icon">📈</div>
+                                <span>Invest</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions Page -->
+            <div id="transactions-page" class="page" style="display: none;">
+                <div class="transactions-section">
+                    <h2 class="section-title">Recent Transactions</h2>
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-01-15</td>
+                                <td>Grocery Store</td>
+                                <td>Food & Dining</td>
+                                <td class="transaction-amount negative">-$85.50</td>
+                                <td><span class="transaction-status status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-14</td>
+                                <td>Salary Deposit</td>
+                                <td>Income</td>
+                                <td class="transaction-amount positive">+$3,500.00</td>
+                                <td><span class="transaction-status status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-13</td>
+                                <td>Gas Station</td>
+                                <td>Transportation</td>
+                                <td class="transaction-amount negative">-$45.20</td>
+                                <td><span class="transaction-status status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-12</td>
+                                <td>Movie Theater</td>
+                                <td>Entertainment</td>
+                                <td class="transaction-amount negative">-$32.00</td>
+                                <td><span class="transaction-status status-pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-01-11</td>
+                                <td>Online Shopping</td>
+                                <td>Shopping</td>
+                                <td class="transaction-amount negative">-$120.75</td>
+                                <td><span class="transaction-status status-completed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Budget Page -->
+            <div id="budget-page" class="page" style="display: none;">
+                <div class="budget-section">
+                    <h2 class="section-title">Budget Overview</h2>
+                    <div class="budget-grid">
+                        <div class="budget-category">
+                            <div class="category-name">Food & Dining</div>
+                            <div class="budget-bar">
+                                <div class="budget-fill" style="width: 75%; background: #28a745;"></div>
+                            </div>
+                            <div class="budget-info">
+                                <span>$750 / $1,000</span>
+                                <span>75% used</span>
+                            </div>
+                        </div>
+                        <div class="budget-category">
+                            <div class="category-name">Transportation</div>
+                            <div class="budget-bar">
+                                <div class="budget-fill" style="width: 60%; background: #ffc107;"></div>
+                            </div>
+                            <div class="budget-info">
+                                <span>$300 / $500</span>
+                                <span>60% used</span>
+                            </div>
+                        </div>
+                        <div class="budget-category">
+                            <div class="category-name">Entertainment</div>
+                            <div class="budget-bar">
+                                <div class="budget-fill" style="width: 40%; background: #17a2b8;"></div>
+                            </div>
+                            <div class="budget-info">
+                                <span>$200 / $500</span>
+                                <span>40% used</span>
+                            </div>
+                        </div>
+                        <div class="budget-category">
+                            <div class="category-name">Shopping</div>
+                            <div class="budget-bar">
+                                <div class="budget-fill" style="width: 90%; background: #dc3545;"></div>
+                            </div>
+                            <div class="budget-info">
+                                <span>$450 / $500</span>
+                                <span>90% used</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Page -->
+            <div id="reports-page" class="page" style="display: none;">
+                <div class="charts-section">
+                    <h2 class="section-title">Financial Reports</h2>
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <h3 class="chart-title">Annual Summary</h3>
+                            <div class="chart-placeholder">
+                                Annual Financial Overview
+                            </div>
+                            <p>Complete year-end financial analysis and insights</p>
+                        </div>
+                        <div class="chart-card">
+                            <h3 class="chart-title">Investment Portfolio</h3>
+                            <div class="chart-placeholder">
+                                Portfolio Performance
+                            </div>
+                            <p>Track your investments and returns over time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Angular-like functionality
+        function setActivePage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(page + '-page').style.display = 'block';
+            
+            // Add active class to selected nav link
+            document.getElementById('nav-' + page).classList.add('active');
+            
+            // Add animation
+            document.getElementById(page + '-page').classList.add('fade-in');
+        }
+
+        function showModal(type) {
+            let message = '';
+            switch(type) {
+                case 'transfer':
+                    message = 'Transfer money between accounts';
+                    break;
+                case 'payment':
+                    message = 'Make a payment to a recipient';
+                    break;
+                case 'budget':
+                    message = 'Set up a new budget category';
+                    break;
+                case 'investment':
+                    message = 'Invest in stocks or funds';
+                    break;
+            }
+            alert(message + ' - Feature coming soon!');
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            setActivePage('dashboard');
+        });
+    </script>
+</body>
+</html> 

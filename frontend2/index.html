@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Travel Platform - Wanderlust</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .app {
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .nav-links a.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=600&fit=crop') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Destinations Grid */
+        .destinations {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .destination-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .destination-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .destination-location {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .destination-content {
+            padding: 1.5rem;
+        }
+
+        .destination-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .destination-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .book-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .book-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Vue.js Transitions */
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.5s;
+        }
+
+        .fade-enter-from, .fade-leave-to {
+            opacity: 0;
+        }
+
+        .slide-enter-active, .slide-leave-active {
+            transition: transform 0.3s;
+        }
+
+        .slide-enter-from {
+            transform: translateX(-100%);
+        }
+
+        .slide-leave-to {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <a href="#" class="logo" @click="currentPage = 'home'">🌍 Wanderlust</a>
+                <ul class="nav-links">
+                    <li><a href="#" :class="{ active: currentPage === 'home' }" @click="currentPage = 'home'">Home</a></li>
+                    <li><a href="#" :class="{ active: currentPage === 'destinations' }" @click="currentPage = 'destinations'">Destinations</a></li>
+                    <li><a href="#" :class="{ active: currentPage === 'about' }" @click="currentPage = 'about'">About</a></li>
+                    <li><a href="#" :class="{ active: currentPage === 'contact' }" @click="currentPage = 'contact'">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Home Page -->
+            <div v-if="currentPage === 'home'" class="page">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>Discover Your Next Adventure</h1>
+                        <p>Explore breathtaking destinations around the world with our curated travel experiences</p>
+                        <a href="#" class="cta-button" @click="currentPage = 'destinations'">Start Exploring</a>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="features">
+                    <h2 class="section-title" style="color: #333;">Why Choose Wanderlust?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">✈️</div>
+                            <h3 class="feature-title">Curated Experiences</h3>
+                            <p class="feature-description">Hand-picked destinations and activities for unforgettable memories</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🏨</div>
+                            <h3 class="feature-title">Premium Accommodations</h3>
+                            <p class="feature-description">Stay in the finest hotels and resorts worldwide</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">👥</div>
+                            <h3 class="feature-title">Expert Guides</h3>
+                            <p class="feature-description">Local experts to enhance your travel experience</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🛡️</div>
+                            <h3 class="feature-title">24/7 Support</h3>
+                            <p class="feature-description">Round-the-clock assistance throughout your journey</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials -->
+                <section class="testimonials">
+                    <h2 class="section-title" style="color: #333;">What Our Travelers Say</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Amazing experience! The team at Wanderlust made our honeymoon unforgettable. Every detail was perfect."</p>
+                            <p class="testimonial-author">- Sarah & Mike Johnson</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Professional service from start to finish. Our family vacation was stress-free and absolutely magical."</p>
+                            <p class="testimonial-author">- David Chen</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The local guides were incredible. We discovered hidden gems we never would have found on our own."</p>
+                            <p class="testimonial-author">- Emily Rodriguez</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Destinations Page -->
+            <div v-if="currentPage === 'destinations'" class="page">
+                <h1 class="section-title">Popular Destinations</h1>
+                <div class="destinations-grid">
+                    <div v-for="destination in destinations" :key="destination.id" class="destination-card" @click="selectDestination(destination)">
+                        <div class="destination-image" :style="{ backgroundImage: `url(${destination.image})` }">
+                            <div class="destination-overlay">
+                                <div class="destination-name">{{ destination.name }}</div>
+                                <div class="destination-location">{{ destination.location }}</div>
+                            </div>
+                        </div>
+                        <div class="destination-content">
+                            <p class="destination-description">{{ destination.description }}</p>
+                            <div class="destination-price">From ${{ destination.price }}</div>
+                            <button class="book-button" @click.stop="bookDestination(destination)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div v-if="currentPage === 'about'" class="page">
+                <div class="features">
+                    <h1 class="section-title" style="color: #333;">About Wanderlust</h1>
+                    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin-bottom: 2rem;">
+                            Wanderlust was founded with a simple mission: to make extraordinary travel experiences accessible to everyone. 
+                            We believe that travel has the power to transform lives, broaden perspectives, and create lasting memories.
+                        </p>
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: #555; margin-bottom: 2rem;">
+                            Our team of travel experts works tirelessly to curate the perfect itineraries, ensuring every detail is 
+                            carefully planned to provide you with an unforgettable journey.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                            <div>
+                                <h3 style="color: #667eea; margin-bottom: 1rem;">500+</h3>
+                                <p>Happy Travelers</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #667eea; margin-bottom: 1rem;">50+</h3>
+                                <p>Destinations</p>
+                            </div>
+                            <div>
+                                <h3 style="color: #667eea; margin-bottom: 1rem;">5+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Page -->
+            <div v-if="currentPage === 'contact'" class="page">
+                <div class="features">
+                    <h1 class="section-title" style="color: #333;">Contact Us</h1>
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <form @submit.prevent="submitContact">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #333;">Name:</label>
+                                <input v-model="contactForm.name" type="text" required 
+                                       style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #333;">Email:</label>
+                                <input v-model="contactForm.email" type="email" required 
+                                       style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #333;">Message:</label>
+                                <textarea v-model="contactForm.message" required rows="5"
+                                          style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <h3>🌍 Wanderlust</h3>
+                <p>Making your travel dreams come true</p>
+                <p>© 2024 Wanderlust. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    currentPage: 'home',
+                    contactForm: {
+                        name: '',
+                        email: '',
+                        message: ''
+                    },
+                    destinations: [
+                        {
+                            id: 1,
+                            name: 'Santorini, Greece',
+                            location: 'Mediterranean Paradise',
+                            description: 'Experience the stunning white architecture and breathtaking sunsets of this iconic Greek island.',
+                            price: 1299,
+                            image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=250&fit=crop'
+                        },
+                        {
+                            id: 2,
+                            name: 'Bali, Indonesia',
+                            location: 'Tropical Paradise',
+                            description: 'Discover ancient temples, pristine beaches, and lush rice terraces in this spiritual haven.',
+                            price: 899,
+                            image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=250&fit=crop'
+                        },
+                        {
+                            id: 3,
+                            name: 'Swiss Alps',
+                            location: 'Mountain Adventure',
+                            description: 'Explore majestic peaks, crystal-clear lakes, and charming alpine villages.',
+                            price: 1499,
+                            image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop'
+                        },
+                        {
+                            id: 4,
+                            name: 'Tokyo, Japan',
+                            location: 'Modern Metropolis',
+                            description: 'Immerse yourself in the perfect blend of traditional culture and cutting-edge technology.',
+                            price: 1699,
+                            image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=250&fit=crop'
+                        },
+                        {
+                            id: 5,
+                            name: 'Machu Picchu',
+                            location: 'Ancient Wonder',
+                            description: 'Journey to the mystical ruins of the Incan empire high in the Andes mountains.',
+                            price: 1899,
+                            image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=400&h=250&fit=crop'
+                        },
+                        {
+                            id: 6,
+                            name: 'Maldives',
+                            location: 'Ocean Paradise',
+                            description: 'Relax in overwater bungalows surrounded by crystal-clear turquoise waters.',
+                            price: 2499,
+                            image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400&h=250&fit=crop'
+                        }
+                    ]
+                }
+            },
+            methods: {
+                selectDestination(destination) {
+                    console.log('Selected destination:', destination.name);
+                },
+                bookDestination(destination) {
+                    alert(`Booking ${destination.name} for $${destination.price}!`);
+                },
+                submitContact() {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.contactForm = { name: '', email: '', message: '' };
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html> 
