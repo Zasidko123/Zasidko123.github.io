@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - TechVision</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function ProductsPage() {
+            const [selectedCategory, setSelectedCategory] = useState('all');
+
+            const categories = [
+                { id: 'all', name: 'All Products' },
+                { id: 'software', name: 'Software' },
+                { id: 'hardware', name: 'Hardware' },
+                { id: 'ai', name: 'AI Tools' },
+                { id: 'security', name: 'Security' }
+            ];
+
+            const products = [
+                {
+                    id: 1,
+                    name: "AI Assistant Pro",
+                    category: "ai",
+                    description: "Advanced AI assistant for business automation",
+                    price: "$299",
+                    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
+                    features: ["Natural Language Processing", "24/7 Availability", "Multi-platform Support"]
+                },
+                {
+                    id: 2,
+                    name: "CloudSync Enterprise",
+                    category: "software",
+                    description: "Enterprise-grade cloud synchronization solution",
+                    price: "$199",
+                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
+                    features: ["Real-time Sync", "Advanced Security", "Scalable Infrastructure"]
+                },
+                {
+                    id: 3,
+                    name: "SecureNet Firewall",
+                    category: "security",
+                    description: "Next-generation firewall protection",
+                    price: "$399",
+                    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+                    features: ["Threat Detection", "VPN Support", "24/7 Monitoring"]
+                },
+                {
+                    id: 4,
+                    name: "DataViz Studio",
+                    category: "software",
+                    description: "Professional data visualization platform",
+                    price: "$149",
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+                    features: ["Interactive Charts", "Real-time Data", "Export Options"]
+                },
+                {
+                    id: 5,
+                    name: "SmartBot Framework",
+                    category: "ai",
+                    description: "Custom chatbot development framework",
+                    price: "$249",
+                    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+                    features: ["Custom Training", "Multi-language", "Analytics Dashboard"]
+                },
+                {
+                    id: 6,
+                    name: "Quantum Server",
+                    category: "hardware",
+                    description: "High-performance quantum computing server",
+                    price: "$2,999",
+                    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=300&fit=crop",
+                    features: ["Quantum Processing", "Advanced Cooling", "Scalable Design"]
+                }
+            ];
+
+            const filteredProducts = selectedCategory === 'all' 
+                ? products 
+                : products.filter(product => product.category === selectedCategory);
+
+            return (
+                <div className="app">
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="nav-container">
+                            <div className="nav-logo">
+                                <div className="logo-icon">
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                                <span>TechVision</span>
+                            </div>
+                            <ul className="nav-menu">
+                                <li><a href="index.html" className="nav-link"><i className="fas fa-home"></i><span>Home</span></a></li>
+                                <li><a href="services.html" className="nav-link"><i className="fas fa-cogs"></i><span>Services</span></a></li>
+                                <li><a href="products.html" className="nav-link active"><i className="fas fa-box"></i><span>Products</span></a></li>
+                                <li><a href="about.html" className="nav-link"><i className="fas fa-info-circle"></i><span>About</span></a></li>
+                                <li><a href="team.html" className="nav-link"><i className="fas fa-users"></i><span>Team</span></a></li>
+                                <li><a href="portfolio.html" className="nav-link"><i className="fas fa-briefcase"></i><span>Portfolio</span></a></li>
+                                <li><a href="blog.html" className="nav-link"><i className="fas fa-blog"></i><span>Blog</span></a></li>
+                                <li><a href="contact.html" className="nav-link"><i className="fas fa-envelope"></i><span>Contact</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {/* Page Header */}
+                    <section className="page-header">
+                        <div className="container">
+                            <h1 className="page-title">Our Products</h1>
+                            <p className="page-subtitle">Cutting-edge technology solutions for modern businesses</p>
+                        </div>
+                    </section>
+
+                    {/* Category Filter */}
+                    <section className="filter-section">
+                        <div className="container">
+                            <div className="filter-buttons">
+                                {categories.map(category => (
+                                    <button
+                                        key={category.id}
+                                        className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+                                        onClick={() => setSelectedCategory(category.id)}
+                                    >
+                                        {category.name}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Products Grid */}
+                    <section className="products-section">
+                        <div className="container">
+                            <div className="products-grid">
+                                {filteredProducts.map(product => (
+                                    <div key={product.id} className="product-card">
+                                        <div className="product-image">
+                                            <img src={product.image} alt={product.name} />
+                                            <div className="product-overlay">
+                                                <div className="overlay-content">
+                                                    <h3>{product.name}</h3>
+                                                    <p>{product.description}</p>
+                                                    <div className="product-features">
+                                                        {product.features.map((feature, index) => (
+                                                            <span key={index} className="feature-tag">{feature}</span>
+                                                        ))}
+                                                    </div>
+                                                    <div className="product-actions">
+                                                        <span className="product-price">{product.price}</span>
+                                                        <a href="contact.html" className="btn btn-primary">Get Quote</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="product-info">
+                                            <h3>{product.name}</h3>
+                                            <p>{product.description}</p>
+                                            <div className="product-meta">
+                                                <span className="product-price">{product.price}</span>
+                                                <a href="contact.html" className="btn btn-small">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Product Stats */}
+                    <section className="product-stats">
+                        <div className="container">
+                            <div className="stats-grid">
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-users"></i>
+                                    </div>
+                                    <div className="stat-number">10,000+</div>
+                                    <div className="stat-label">Happy Customers</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-download"></i>
+                                    </div>
+                                    <div className="stat-number">50,000+</div>
+                                    <div className="stat-label">Downloads</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-star"></i>
+                                    </div>
+                                    <div className="stat-number">4.9</div>
+                                    <div className="stat-label">Average Rating</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-icon">
+                                        <i className="fas fa-globe"></i>
+                                    </div>
+                                    <div className="stat-number">150+</div>
+                                    <div className="stat-label">Countries</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <div className="footer-logo">
+                                        <i className="fas fa-rocket"></i>
+                                        <span>TechVision</span>
+                                    </div>
+                                    <p>Building the future with innovative technology solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Contact Info</h4>
+                                    <p><i className="fas fa-envelope"></i> hello@techvision.com</p>
+                                    <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                                    <p><i className="fas fa-map-marker-alt"></i> 123 Tech Street, NY</p>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2024 TechVision. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<ProductsPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

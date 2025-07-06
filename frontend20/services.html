@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - TechVision</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function ServicesPage() {
+            const [activeService, setActiveService] = useState(null);
+
+            const services = [
+                {
+                    id: 1,
+                    title: "Artificial Intelligence",
+                    icon: "fas fa-brain",
+                    description: "Advanced AI solutions for automation and decision-making",
+                    features: ["Machine Learning", "Natural Language Processing", "Computer Vision", "Predictive Analytics"],
+                    price: "From $5,000"
+                },
+                {
+                    id: 2,
+                    title: "Cloud Computing",
+                    icon: "fas fa-cloud",
+                    description: "Scalable cloud infrastructure and migration services",
+                    features: ["AWS/Azure/GCP", "Serverless Architecture", "Data Migration", "Cloud Security"],
+                    price: "From $3,000"
+                },
+                {
+                    id: 3,
+                    title: "Cybersecurity",
+                    icon: "fas fa-shield-alt",
+                    description: "Comprehensive security solutions for your business",
+                    features: ["Penetration Testing", "Security Audits", "Incident Response", "Compliance"],
+                    price: "From $4,000"
+                },
+                {
+                    id: 4,
+                    title: "Web Development",
+                    icon: "fas fa-code",
+                    description: "Modern web applications with cutting-edge technologies",
+                    features: ["React/Vue/Angular", "Node.js/Python", "Progressive Web Apps", "API Development"],
+                    price: "From $2,500"
+                },
+                {
+                    id: 5,
+                    title: "Mobile Development",
+                    icon: "fas fa-mobile-alt",
+                    description: "Native and cross-platform mobile applications",
+                    features: ["iOS Development", "Android Development", "React Native", "Flutter"],
+                    price: "From $3,500"
+                },
+                {
+                    id: 6,
+                    title: "Data Analytics",
+                    icon: "fas fa-chart-line",
+                    description: "Transform data into actionable insights",
+                    features: ["Big Data Processing", "Business Intelligence", "Data Visualization", "Real-time Analytics"],
+                    price: "From $4,500"
+                }
+            ];
+
+            return (
+                <div className="app">
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="nav-container">
+                            <div className="nav-logo">
+                                <div className="logo-icon">
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                                <span>TechVision</span>
+                            </div>
+                            <ul className="nav-menu">
+                                <li><a href="index.html" className="nav-link"><i className="fas fa-home"></i><span>Home</span></a></li>
+                                <li><a href="services.html" className="nav-link active"><i className="fas fa-cogs"></i><span>Services</span></a></li>
+                                <li><a href="products.html" className="nav-link"><i className="fas fa-box"></i><span>Products</span></a></li>
+                                <li><a href="about.html" className="nav-link"><i className="fas fa-info-circle"></i><span>About</span></a></li>
+                                <li><a href="team.html" className="nav-link"><i className="fas fa-users"></i><span>Team</span></a></li>
+                                <li><a href="portfolio.html" className="nav-link"><i className="fas fa-briefcase"></i><span>Portfolio</span></a></li>
+                                <li><a href="blog.html" className="nav-link"><i className="fas fa-blog"></i><span>Blog</span></a></li>
+                                <li><a href="contact.html" className="nav-link"><i className="fas fa-envelope"></i><span>Contact</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {/* Page Header */}
+                    <section className="page-header">
+                        <div className="container">
+                            <h1 className="page-title">Our Services</h1>
+                            <p className="page-subtitle">Comprehensive technology solutions for modern businesses</p>
+                        </div>
+                    </section>
+
+                    {/* Services Grid */}
+                    <section className="services-section">
+                        <div className="container">
+                            <div className="services-grid">
+                                {services.map(service => (
+                                    <div 
+                                        key={service.id} 
+                                        className={`service-card ${activeService === service.id ? 'active' : ''}`}
+                                        onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+                                    >
+                                        <div className="service-header">
+                                            <div className="service-icon">
+                                                <i className={service.icon}></i>
+                                            </div>
+                                            <h3>{service.title}</h3>
+                                            <p>{service.description}</p>
+                                        </div>
+                                        <div className="service-content">
+                                            <div className="service-features">
+                                                <h4>Features:</h4>
+                                                <ul>
+                                                    {service.features.map((feature, index) => (
+                                                        <li key={index}>{feature}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="service-price">
+                                                <span className="price">{service.price}</span>
+                                                <a href="contact.html" className="btn btn-primary">Get Quote</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Process Section */}
+                    <section className="process-section">
+                        <div className="container">
+                            <div className="section-header">
+                                <h2 className="section-title">Our Process</h2>
+                                <p className="section-subtitle">How we deliver exceptional results</p>
+                            </div>
+                            <div className="process-steps">
+                                <div className="process-step">
+                                    <div className="step-number">01</div>
+                                    <div className="step-icon">
+                                        <i className="fas fa-search"></i>
+                                    </div>
+                                    <h3>Discovery</h3>
+                                    <p>We analyze your needs and requirements to understand your goals.</p>
+                                </div>
+                                <div className="process-step">
+                                    <div className="step-number">02</div>
+                                    <div className="step-icon">
+                                        <i className="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h3>Strategy</h3>
+                                    <p>We develop a comprehensive strategy tailored to your business.</p>
+                                </div>
+                                <div className="process-step">
+                                    <div className="step-number">03</div>
+                                    <div className="step-icon">
+                                        <i className="fas fa-cogs"></i>
+                                    </div>
+                                    <h3>Development</h3>
+                                    <p>Our team implements the solution with regular updates and feedback.</p>
+                                </div>
+                                <div className="process-step">
+                                    <div className="step-number">04</div>
+                                    <div className="step-icon">
+                                        <i className="fas fa-rocket"></i>
+                                    </div>
+                                    <h3>Launch</h3>
+                                    <p>We deploy your solution and provide ongoing support and maintenance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <div className="footer-logo">
+                                        <i className="fas fa-rocket"></i>
+                                        <span>TechVision</span>
+                                    </div>
+                                    <p>Building the future with innovative technology solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Contact Info</h4>
+                                    <p><i className="fas fa-envelope"></i> hello@techvision.com</p>
+                                    <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                                    <p><i className="fas fa-map-marker-alt"></i> 123 Tech Street, NY</p>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2024 TechVision. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<ServicesPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

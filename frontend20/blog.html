@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TechVision</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function BlogPage() {
+            const blogPosts = [
+                {
+                    title: "The Future of AI in Business",
+                    excerpt: "Discover how artificial intelligence is transforming modern business operations...",
+                    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop",
+                    date: "March 15, 2024",
+                    author: "Alex Johnson",
+                    category: "AI/ML"
+                },
+                {
+                    title: "Cloud Computing Trends 2024",
+                    excerpt: "Explore the latest trends in cloud computing and their impact on enterprise...",
+                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
+                    date: "March 10, 2024",
+                    author: "Sarah Chen",
+                    category: "Cloud"
+                },
+                {
+                    title: "Cybersecurity Best Practices",
+                    excerpt: "Essential cybersecurity practices to protect your business in the digital age...",
+                    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                    date: "March 5, 2024",
+                    author: "Mike Rodriguez",
+                    category: "Security"
+                }
+            ];
+
+            return (
+                <div className="app">
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="nav-container">
+                            <div className="nav-logo">
+                                <div className="logo-icon">
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                                <span>TechVision</span>
+                            </div>
+                            <ul className="nav-menu">
+                                <li><a href="index.html" className="nav-link"><i className="fas fa-home"></i><span>Home</span></a></li>
+                                <li><a href="services.html" className="nav-link"><i className="fas fa-cogs"></i><span>Services</span></a></li>
+                                <li><a href="products.html" className="nav-link"><i className="fas fa-box"></i><span>Products</span></a></li>
+                                <li><a href="about.html" className="nav-link"><i className="fas fa-info-circle"></i><span>About</span></a></li>
+                                <li><a href="team.html" className="nav-link"><i className="fas fa-users"></i><span>Team</span></a></li>
+                                <li><a href="portfolio.html" className="nav-link"><i className="fas fa-briefcase"></i><span>Portfolio</span></a></li>
+                                <li><a href="blog.html" className="nav-link active"><i className="fas fa-blog"></i><span>Blog</span></a></li>
+                                <li><a href="contact.html" className="nav-link"><i className="fas fa-envelope"></i><span>Contact</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {/* Page Header */}
+                    <section className="page-header">
+                        <div className="container">
+                            <h1 className="page-title">Our Blog</h1>
+                            <p className="page-subtitle">Insights and updates from the world of technology</p>
+                        </div>
+                    </section>
+
+                    {/* Blog Grid */}
+                    <section className="blog-section">
+                        <div className="container">
+                            <div className="blog-grid">
+                                {blogPosts.map((post, index) => (
+                                    <article key={index} className="blog-card">
+                                        <div className="blog-image">
+                                            <img src={post.image} alt={post.title} />
+                                            <div className="blog-category">{post.category}</div>
+                                        </div>
+                                        <div className="blog-content">
+                                            <div className="blog-meta">
+                                                <span className="blog-date">{post.date}</span>
+                                                <span className="blog-author">by {post.author}</span>
+                                            </div>
+                                            <h3 className="blog-title">{post.title}</h3>
+                                            <p className="blog-excerpt">{post.excerpt}</p>
+                                            <a href="#" className="read-more">Read More →</a>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <div className="footer-logo">
+                                        <i className="fas fa-rocket"></i>
+                                        <span>TechVision</span>
+                                    </div>
+                                    <p>Building the future with innovative technology solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Contact Info</h4>
+                                    <p><i className="fas fa-envelope"></i> hello@techvision.com</p>
+                                    <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                                    <p><i className="fas fa-map-marker-alt"></i> 123 Tech Street, NY</p>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2024 TechVision. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<BlogPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

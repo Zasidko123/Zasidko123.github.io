@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TechVision</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function ContactPage() {
+            return (
+                <div className="app">
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="nav-container">
+                            <div className="nav-logo">
+                                <div className="logo-icon">
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                                <span>TechVision</span>
+                            </div>
+                            <ul className="nav-menu">
+                                <li><a href="index.html" className="nav-link"><i className="fas fa-home"></i><span>Home</span></a></li>
+                                <li><a href="services.html" className="nav-link"><i className="fas fa-cogs"></i><span>Services</span></a></li>
+                                <li><a href="products.html" className="nav-link"><i className="fas fa-box"></i><span>Products</span></a></li>
+                                <li><a href="about.html" className="nav-link"><i className="fas fa-info-circle"></i><span>About</span></a></li>
+                                <li><a href="team.html" className="nav-link"><i className="fas fa-users"></i><span>Team</span></a></li>
+                                <li><a href="portfolio.html" className="nav-link"><i className="fas fa-briefcase"></i><span>Portfolio</span></a></li>
+                                <li><a href="blog.html" className="nav-link"><i className="fas fa-blog"></i><span>Blog</span></a></li>
+                                <li><a href="contact.html" className="nav-link active"><i className="fas fa-envelope"></i><span>Contact</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {/* Page Header */}
+                    <section className="page-header">
+                        <div className="container">
+                            <h1 className="page-title">Contact Us</h1>
+                            <p className="page-subtitle">Get in touch with our team</p>
+                        </div>
+                    </section>
+
+                    {/* Contact Section */}
+                    <section className="contact-section">
+                        <div className="container">
+                            <div className="contact-grid">
+                                <div className="contact-form-wrapper">
+                                    <h2>Send us a Message</h2>
+                                    <form className="contact-form">
+                                        <div className="form-row">
+                                            <div className="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" required />
+                                            </div>
+                                            <div className="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" required />
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Email</label>
+                                            <input type="email" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Subject</label>
+                                            <select required>
+                                                <option value="">Select a subject</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="services">Services</option>
+                                                <option value="support">Support</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Message</label>
+                                            <textarea rows="5" required></textarea>
+                                        </div>
+                                        <button type="submit" className="btn btn-primary">
+                                            <i className="fas fa-paper-plane"></i>
+                                            Send Message
+                                        </button>
+                                    </form>
+                                </div>
+                                <div className="contact-info-wrapper">
+                                    <h2>Get in Touch</h2>
+                                    <div className="contact-info">
+                                        <div className="info-item">
+                                            <div className="info-icon">
+                                                <i className="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Address</h4>
+                                                <p>123 Tech Street<br />New York, NY 10001</p>
+                                            </div>
+                                        </div>
+                                        <div className="info-item">
+                                            <div className="info-icon">
+                                                <i className="fas fa-phone"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Phone</h4>
+                                                <p>+1 (555) 123-4567</p>
+                                            </div>
+                                        </div>
+                                        <div className="info-item">
+                                            <div className="info-icon">
+                                                <i className="fas fa-envelope"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Email</h4>
+                                                <p>hello@techvision.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <div className="footer-logo">
+                                        <i className="fas fa-rocket"></i>
+                                        <span>TechVision</span>
+                                    </div>
+                                    <p>Building the future with innovative technology solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Contact Info</h4>
+                                    <p><i className="fas fa-envelope"></i> hello@techvision.com</p>
+                                    <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                                    <p><i className="fas fa-map-marker-alt"></i> 123 Tech Street, NY</p>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2024 TechVision. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<ContactPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVision - Future Technology</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function App() {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [activeSection, setActiveSection] = useState('home');
+
+            const navItems = [
+                { id: 'home', name: 'Home', icon: 'fas fa-home' },
+                { id: 'services', name: 'Services', icon: 'fas fa-cogs' },
+                { id: 'products', name: 'Products', icon: 'fas fa-box' },
+                { id: 'about', name: 'About', icon: 'fas fa-info-circle' },
+                { id: 'team', name: 'Team', icon: 'fas fa-users' },
+                { id: 'portfolio', name: 'Portfolio', icon: 'fas fa-briefcase' },
+                { id: 'blog', name: 'Blog', icon: 'fas fa-blog' },
+                { id: 'contact', name: 'Contact', icon: 'fas fa-envelope' }
+            ];
+
+            return (
+                <div className="app">
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="nav-container">
+                            <div className="nav-logo">
+                                <div className="logo-icon">
+                                    <i className="fas fa-rocket"></i>
+                                </div>
+                                <span>TechVision</span>
+                            </div>
+                            <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                                {navItems.map(item => (
+                                    <li key={item.id}>
+                                        <a 
+                                            href={`${item.id}.html`}
+                                            className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                                            onClick={() => setActiveSection(item.id)}
+                                        >
+                                            <i className={item.icon}></i>
+                                            <span>{item.name}</span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div 
+                                className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            >
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section className="hero-section">
+                        <div className="hero-background">
+                            <div className="particles"></div>
+                            <div className="floating-shapes">
+                                <div className="shape shape-1"></div>
+                                <div className="shape shape-2"></div>
+                                <div className="shape shape-3"></div>
+                                <div className="shape shape-4"></div>
+                            </div>
+                        </div>
+                        <div className="hero-content">
+                            <div className="hero-text">
+                                <h1 className="hero-title">
+                                    Welcome to the
+                                    <span className="gradient-text"> Future</span>
+                                </h1>
+                                <p className="hero-description">
+                                    Discover cutting-edge technology solutions that transform businesses and enhance lives. 
+                                    We're building tomorrow's innovations today.
+                                </p>
+                                <div className="hero-buttons">
+                                    <a href="services.html" className="btn btn-primary">
+                                        <i className="fas fa-play"></i>
+                                        Explore Services
+                                    </a>
+                                    <a href="products.html" className="btn btn-secondary">
+                                        <i className="fas fa-arrow-right"></i>
+                                        View Products
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="hero-visual">
+                                <div className="tech-sphere">
+                                    <div className="sphere-core"></div>
+                                    <div className="sphere-ring ring-1"></div>
+                                    <div className="sphere-ring ring-2"></div>
+                                    <div className="sphere-ring ring-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Features Section */}
+                    <section className="features-section">
+                        <div className="container">
+                            <div className="section-header">
+                                <h2 className="section-title">Why Choose TechVision</h2>
+                                <p className="section-subtitle">Leading the way in technological innovation</p>
+                            </div>
+                            <div className="features-grid">
+                                <div className="feature-card">
+                                    <div className="feature-icon">
+                                        <i className="fas fa-brain"></i>
+                                    </div>
+                                    <h3>AI & Machine Learning</h3>
+                                    <p>Advanced artificial intelligence solutions that learn and adapt to your needs.</p>
+                                    <div className="feature-hover">
+                                        <a href="services.html" className="btn-small">Learn More</a>
+                                    </div>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon">
+                                        <i className="fas fa-cloud"></i>
+                                    </div>
+                                    <h3>Cloud Solutions</h3>
+                                    <p>Scalable cloud infrastructure that grows with your business requirements.</p>
+                                    <div className="feature-hover">
+                                        <a href="services.html" className="btn-small">Learn More</a>
+                                    </div>
+                                </div>
+                                <div className="feature-card">
+                                    <div className="feature-icon">
+                                        <i className="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h3>Cybersecurity</h3>
+                                    <p>Comprehensive security solutions to protect your digital assets.</p>
+                                    <div className="feature-hover">
+                                        <a href="services.html" className="btn-small">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Stats Section */}
+                    <section className="stats-section">
+                        <div className="container">
+                            <div className="stats-grid">
+                                <div className="stat-item">
+                                    <div className="stat-number" data-target="500">0</div>
+                                    <div className="stat-label">Projects Completed</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-number" data-target="100">0</div>
+                                    <div className="stat-label">Happy Clients</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-number" data-target="50">0</div>
+                                    <div className="stat-label">Team Members</div>
+                                </div>
+                                <div className="stat-item">
+                                    <div className="stat-number" data-target="10">0</div>
+                                    <div className="stat-label">Years Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className="cta-section">
+                        <div className="container">
+                            <div className="cta-content">
+                                <h2>Ready to Transform Your Business?</h2>
+                                <p>Let's discuss how our technology solutions can drive your success</p>
+                                <div className="cta-buttons">
+                                    <a href="contact.html" className="btn btn-primary">
+                                        <i className="fas fa-rocket"></i>
+                                        Get Started
+                                    </a>
+                                    <a href="about.html" className="btn btn-secondary">
+                                        <i className="fas fa-info-circle"></i>
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <div className="footer-logo">
+                                        <i className="fas fa-rocket"></i>
+                                        <span>TechVision</span>
+                                    </div>
+                                    <p>Building the future with innovative technology solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="products.html">Products</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Contact Info</h4>
+                                    <p><i className="fas fa-envelope"></i> hello@techvision.com</p>
+                                    <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                                    <p><i className="fas fa-map-marker-alt"></i> 123 Tech Street, NY</p>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2024 TechVision. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html> 
